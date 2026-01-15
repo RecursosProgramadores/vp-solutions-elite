@@ -33,7 +33,7 @@ const TrustSection = () => {
       <div className="container-vp">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-sm font-semibold text-accent">
+          <span className="mb-4 inline-block rounded-full bg-vp-green/10 px-4 py-1.5 text-sm font-semibold text-accent">
             Certificaciones y Confianza
           </span>
           <h2 className="mb-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
@@ -57,7 +57,7 @@ const TrustSection = () => {
                   <cert.icon className="h-10 w-10 text-primary" />
                 </div>
               </div>
-              <span className="mb-2 block text-2xl font-bold text-accent">{cert.name}</span>
+              <span className="mb-2 block text-2xl font-bold text-primary">{cert.name}</span>
               <h4 className="mb-4 text-lg font-semibold text-foreground">{cert.title}</h4>
               <p className="text-muted-foreground">{cert.description}</p>
             </div>
@@ -70,7 +70,7 @@ const TrustSection = () => {
             {trustFactors.map((factor) => (
               <div key={factor.label} className="flex items-center gap-4 text-white">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
-                  <factor.icon className="h-7 w-7 text-cyan-glow" />
+                  <factor.icon className="h-7 w-7 text-vp-green" />
                 </div>
                 <div>
                   <span className="block text-lg font-bold">{factor.value}</span>

@@ -70,7 +70,7 @@ const About = () => {
             <div className="mt-8 space-y-3">
               {commitments.map((commitment) => (
                 <div key={commitment} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-vp-green" />
                   <span className="text-foreground">{commitment}</span>
                 </div>
               ))}
@@ -84,7 +84,7 @@ const About = () => {
                 key={stat.label}
                 className="flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition-all hover:shadow-md"
               >
-                <stat.icon className="mb-4 h-10 w-10 text-accent" />
+                <stat.icon className="mb-4 h-10 w-10 text-primary" />
                 <span className="mb-2 text-4xl font-bold text-primary lg:text-5xl">
                   {stat.number}
                 </span>

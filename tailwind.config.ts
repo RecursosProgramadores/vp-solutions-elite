@@ -50,7 +50,27 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // VP Solutions custom colors
+        // VP Solutions corporate colors
+        vp: {
+          blue: {
+            DEFAULT: "hsl(var(--vp-blue))",
+            dark: "hsl(var(--vp-blue-dark))",
+            light: "hsl(var(--vp-blue-light))",
+          },
+          red: {
+            DEFAULT: "hsl(var(--vp-red))",
+            dark: "hsl(var(--vp-red-dark))",
+          },
+          green: {
+            DEFAULT: "hsl(var(--vp-green))",
+            dark: "hsl(var(--vp-green-dark))",
+          },
+          gray: {
+            DEFAULT: "hsl(var(--vp-gray))",
+            light: "hsl(var(--vp-gray-light))",
+          },
+        },
+        // Legacy tokens for compatibility
         navy: {
           deep: "hsl(var(--navy-deep))",
           medium: "hsl(var(--navy-medium))",

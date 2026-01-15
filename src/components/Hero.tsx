@@ -38,14 +38,14 @@ const Hero = () => {
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm animate-fade-up">
-            <span className="h-2 w-2 rounded-full bg-cyan-glow animate-pulse-subtle" />
+            <span className="h-2 w-2 rounded-full bg-accent animate-pulse-subtle" />
             <span className="text-sm font-medium text-white/90">+13 años de experiencia en el Perú</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up delay-100">
             Soluciones TI de{' '}
-            <span className="text-gradient">Alta Calidad</span>{' '}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, hsl(91 52% 56%) 0%, hsl(91 52% 70%) 100%)' }}>Alta Calidad</span>{' '}
             para el Perú
           </h1>
 
@@ -57,17 +57,17 @@ const Hero = () => {
           {/* Services highlight */}
           <div className="mb-10 flex flex-wrap items-center justify-center gap-3 text-sm text-white/70 animate-fade-up delay-300">
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="h-1.5 w-1.5 rounded-full bg-vp-green" />
               Soporte experto en servidores y storage
             </span>
             <span className="hidden sm:inline">•</span>
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="h-1.5 w-1.5 rounded-full bg-vp-green" />
               Venta y alquiler de hardware
             </span>
             <span className="hidden sm:inline">•</span>
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="h-1.5 w-1.5 rounded-full bg-vp-green" />
               Mantenimiento preventivo y correctivo
             </span>
           </div>
@@ -85,7 +85,7 @@ const Hero = () => {
             <Button
               size="lg"
               asChild
-              className="flex items-center gap-2 bg-accent px-8 py-6 text-lg font-semibold text-accent-foreground shadow-lg transition-all hover:bg-accent/90"
+              className="flex items-center gap-2 bg-accent px-8 py-6 text-lg font-semibold text-white shadow-lg transition-all hover:bg-accent/90 hover:shadow-xl"
             >
               <a href="#mesa-de-ayuda">
                 <Headphones className="h-5 w-5" />
@@ -110,9 +110,9 @@ const Hero = () => {
             {isoBadges.map((badge) => (
               <div
                 key={badge.label}
-                className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-white/15"
+                className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm transition-all hover:border-primary/50 hover:bg-white/15"
               >
-                <badge.icon className="h-8 w-8 text-accent" />
+                <badge.icon className="h-8 w-8 text-vp-green" />
                 <div className="text-left">
                   <span className="block text-sm font-bold text-white">{badge.label}</span>
                   <span className="text-xs text-white/60">{badge.description}</span>

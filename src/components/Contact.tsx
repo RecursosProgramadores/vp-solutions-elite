@@ -87,7 +87,7 @@ const Contact = () => {
             {/* Office Hours */}
             <div className="rounded-2xl border border-border bg-card p-8">
               <div className="mb-6 flex items-center gap-3">
-                <Clock className="h-6 w-6 text-accent" />
+                <Clock className="h-6 w-6 text-primary" />
                 <h3 className="text-xl font-bold text-foreground">Horario de atención</h3>
               </div>
               <div className="space-y-4">
@@ -101,7 +101,7 @@ const Contact = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Soporte de emergencia</span>
-                  <span className="font-semibold text-accent">24/7</span>
+                  <span className="font-semibold text-vp-green">24/7</span>
                 </div>
               </div>
             </div>

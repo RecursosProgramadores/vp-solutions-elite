@@ -99,7 +99,7 @@ const Footer = () => {
             <h4 className="mb-6 text-lg font-bold">Contacto</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                <Mail className="mt-0.5 h-5 w-5 shrink-0 text-vp-green" />
                 <div className="space-y-1 text-sm text-white/70">
                   <a href="mailto:ventas@vpsolutions.com.pe" className="block hover:text-white">
                     ventas@vpsolutions.com.pe
@@ -110,13 +110,13 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 shrink-0 text-accent" />
+                <Phone className="h-5 w-5 shrink-0 text-vp-green" />
                 <a href="tel:+5101234567" className="text-sm text-white/70 hover:text-white">
                   +51 (01) 123-4567
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 shrink-0 text-accent" />
+                <MapPin className="h-5 w-5 shrink-0 text-vp-green" />
                 <span className="text-sm text-white/70">Lima, Perú</span>
               </div>
             </div>
