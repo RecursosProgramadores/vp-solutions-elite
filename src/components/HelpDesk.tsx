@@ -64,7 +64,7 @@ const HelpDesk = () => {
       <div className="container-vp">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-sm font-semibold text-accent">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-vp-green/10 px-4 py-1.5 text-sm font-semibold text-accent">
             <Headphones className="h-4 w-4" />
             Mesa de Ayuda
           </span>
@@ -91,7 +91,7 @@ const HelpDesk = () => {
                   className={`group flex w-full items-center gap-4 rounded-xl border p-6 text-left transition-all ${
                     method.primary
                       ? 'border-whatsapp/30 bg-whatsapp/5 hover:border-whatsapp/50 hover:bg-whatsapp/10'
-                      : 'border-border bg-card hover:border-accent/30 hover:bg-accent/5'
+                      : 'border-border bg-card hover:border-primary/30 hover:bg-primary/5'
                   }`}
                 >
                   <div
@@ -112,10 +112,10 @@ const HelpDesk = () => {
             </div>
 
             {/* Response Time */}
-            <div className="mt-8 rounded-xl border border-accent/20 bg-accent/5 p-6">
+            <div className="mt-8 rounded-xl border border-vp-green/20 bg-vp-green/5 p-6">
               <h4 className="mb-2 font-semibold text-foreground">Tiempo de respuesta</h4>
               <p className="text-muted-foreground">
-                Respondemos en menos de <strong className="text-accent">2 horas</strong> durante horario laboral (Lun-Vie 8am-6pm).
+                Respondemos en menos de <strong className="text-vp-green">2 horas</strong> durante horario laboral (Lun-Vie 8am-6pm).
               </p>
             </div>
           </div>

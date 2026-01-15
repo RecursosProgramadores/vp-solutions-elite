@@ -57,14 +57,14 @@ const Services = () => {
               key={service.title}
               className={`group relative overflow-hidden rounded-2xl border bg-card p-8 transition-all duration-300 card-hover ${
                 service.highlight
-                  ? 'border-accent/30 shadow-lg'
-                  : 'border-border hover:border-accent/20'
+                  ? 'border-primary/30 shadow-lg'
+                  : 'border-border hover:border-primary/20'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {service.highlight && (
                 <div className="absolute right-4 top-4">
-                  <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
+                  <span className="rounded-full bg-vp-red/10 px-3 py-1 text-xs font-semibold text-destructive">
                     Más solicitado
                   </span>
                 </div>
@@ -88,7 +88,7 @@ const Services = () => {
               <div className="mb-6 grid grid-cols-2 gap-3">
                 {service.features.map((feature) => (
                   <div key={feature} className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-accent" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-vp-green" />
                     <span className="text-sm text-muted-foreground">{feature}</span>
                   </div>
                 ))}

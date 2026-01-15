@@ -88,7 +88,7 @@ const Header = () => {
                               href={service.href}
                               className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-secondary"
                             >
-                              <service.icon className="h-5 w-5 text-accent" />
+                              <service.icon className="h-5 w-5 text-primary" />
                               <span className="text-sm font-medium text-foreground">{service.title}</span>
                             </a>
                           ))}
@@ -114,7 +114,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button
               asChild
-              className="bg-accent text-accent-foreground hover:bg-accent/90"
+              className="bg-primary text-primary-foreground hover:bg-destructive transition-colors"
             >
               <a href="#contacto">Solicitar Cotización</a>
             </Button>
@@ -150,7 +150,7 @@ const Header = () => {
             ))}
             <Button
               asChild
-              className="mt-4 w-full bg-accent text-accent-foreground hover:bg-accent/90"
+              className="mt-4 w-full bg-primary text-primary-foreground hover:bg-destructive transition-colors"
             >
               <a href="#contacto">Solicitar Cotización</a>
             </Button>
