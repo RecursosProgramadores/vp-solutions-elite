@@ -1,0 +1,117 @@
+import { CheckCircle2, Users, Building2, Globe, Award, Target, Heart, Star } from 'lucide-react';
+
+const About = () => {
+  const stats = [
+    { number: '13+', label: 'Años de experiencia', icon: Award },
+    { number: '500+', label: 'Clientes satisfechos', icon: Users },
+    { number: '100%', label: 'Cobertura nacional', icon: Globe },
+    { number: '24/7', label: 'Soporte disponible', icon: Building2 },
+  ];
+
+  const values = [
+    {
+      icon: Target,
+      title: 'Misión',
+      description: 'Proporcionar soluciones TI de la más alta calidad, estableciendo alianzas duraderas con nuestros clientes y contribuyendo al desarrollo tecnológico del Perú.',
+    },
+    {
+      icon: Star,
+      title: 'Visión',
+      description: 'Ser la empresa líder en servicios de infraestructura TI en el Perú, reconocida por nuestra excelencia, integridad y compromiso con la innovación.',
+    },
+    {
+      icon: Heart,
+      title: 'Valores',
+      description: 'Integridad, excelencia en el servicio, compromiso con el cliente, transparencia en nuestras operaciones y desarrollo continuo de nuestro capital humano.',
+    },
+  ];
+
+  const commitments = [
+    'Relaciones a largo plazo con nuestros clientes',
+    'Proveedores transparentes y confiables',
+    'Desarrollo continuo del capital humano',
+    'Calidad, integridad y excelencia en cada proyecto',
+  ];
+
+  return (
+    <section id="nosotros" className="section-padding bg-secondary">
+      <div className="container-vp">
+        {/* Section Header */}
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+            Sobre Nosotros
+          </span>
+          <h2 className="mb-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+            Más de una década{' '}
+            <span className="text-primary">construyendo confianza</span>
+          </h2>
+        </div>
+
+        {/* Main Content */}
+        <div className="mb-20 grid gap-12 lg:grid-cols-2">
+          {/* Company Description */}
+          <div>
+            <h3 className="mb-6 text-2xl font-bold text-foreground">
+              VP SOLUTIONS PERU S.A.C.
+            </h3>
+            <div className="space-y-4 text-muted-foreground">
+              <p className="text-lg leading-relaxed">
+                VP SOLUTIONS PERU S.A.C. es una empresa peruana, integradora de soluciones TI, creada hace más de 10 años (13 años en 2026).
+              </p>
+              <p className="leading-relaxed">
+                Contamos con un amplio portafolio de clientes a nivel nacional, principalmente entidades gubernamentales y del Estado, con un equipo profesional altamente calificado dedicado a brindar la más alta calidad de atención y servicio.
+              </p>
+              <p className="leading-relaxed">
+                A lo largo de los años hemos construido alianzas sólidas con las principales empresas de tecnología para proporcionar a nuestros clientes soluciones a medida que se ajusten perfectamente a sus necesidades.
+              </p>
+            </div>
+
+            {/* Commitments */}
+            <div className="mt-8 space-y-3">
+              {commitments.map((commitment) => (
+                <div key={commitment} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
+                  <span className="text-foreground">{commitment}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition-all hover:shadow-md"
+              >
+                <stat.icon className="mb-4 h-10 w-10 text-accent" />
+                <span className="mb-2 text-4xl font-bold text-primary lg:text-5xl">
+                  {stat.number}
+                </span>
+                <span className="text-sm text-muted-foreground">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mission, Vision, Values */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {values.map((value) => (
+            <div
+              key={value.title}
+              className="rounded-2xl border border-border bg-card p-8 transition-all card-hover"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
+                <value.icon className="h-7 w-7 text-primary" />
+              </div>
+              <h4 className="mb-4 text-xl font-bold text-foreground">{value.title}</h4>
+              <p className="text-muted-foreground">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
