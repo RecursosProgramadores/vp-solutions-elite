@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Server, HardDrive, Wrench, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/51938152389?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios', '_blank');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,44 +23,37 @@ const Header = () => {
   }, []);
 
   const services = [
-    { icon: Server, title: 'Soporte de Servidores y Storage', href: '#servicios' },
-    { icon: HardDrive, title: 'Venta de Partes y Piezas', href: '#servicios' },
-    { icon: Wrench, title: 'Alquiler de Servidores', href: '#servicios' },
-    { icon: ShoppingCart, title: 'Venta de Hardware Empresarial', href: '#servicios' },
+    { icon: Server, title: 'Soporte de Servidores y Storage', href: '/#servicios' },
+    { icon: HardDrive, title: 'Venta de Partes y Piezas', href: '/#servicios' },
+    { icon: Wrench, title: 'Alquiler de Servidores', href: '/#servicios' },
+    { icon: ShoppingCart, title: 'Venta de Hardware Empresarial', href: '/#servicios' },
   ];
 
   const navLinks = [
-    { name: 'Inicio', href: '#inicio' },
-    { name: 'Servicios', href: '#servicios', hasSubmenu: true },
-    { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Mesa de Ayuda', href: '#mesa-de-ayuda' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: 'Inicio', href: '/#inicio' },
+    { name: 'Servicios', href: '/#servicios', hasSubmenu: true },
+    { name: 'Nosotros', href: '/#nosotros' },
+    { name: 'Mesa de Ayuda', href: '/mesa-de-ayuda' },
+    { name: 'Contacto', href: '/#contacto' },
   ];
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-card/95 shadow-lg backdrop-blur-md'
-          : 'bg-transparent'
-      }`}
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${isScrolled || !isHome
+        ? 'bg-card/95 shadow-lg backdrop-blur-md'
+        : 'bg-[#0075bf]/60 backdrop-blur-sm'
+        }`}
     >
       <div className="container-vp">
         <nav className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
-              <span className="text-xl font-bold text-primary-foreground">VP</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className={`text-lg font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-                VP SOLUTIONS
-              </span>
-              <span className={`block text-xs ${isScrolled ? 'text-muted-foreground' : 'text-white/70'}`}>
-                PERU S.A.C.
-              </span>
-            </div>
-          </a>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/LogoVPS.png"
+              alt="VP Solutions Logo"
+              className={`h-16 w-auto scale-110 transition-all duration-300 ${(!isHome || isScrolled) ? '' : 'brightness-0 invert'
+                }`}
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 lg:flex">
@@ -65,20 +65,19 @@ const Header = () => {
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
-                    <button
-                      className={`nav-link flex items-center gap-1 ${
-                        isScrolled ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white'
-                      }`}
+                    <a
+                      href={link.href}
+                      className={`nav-link flex items-center gap-1 font-semibold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
+                        }`}
                     >
                       {link.name}
                       <ChevronDown className="h-4 w-4" />
-                    </button>
-                    
+                    </a>
+
                     {/* Mega Menu */}
                     <div
-                      className={`absolute left-1/2 top-full w-80 -translate-x-1/2 pt-4 transition-all duration-200 ${
-                        isServicesOpen ? 'visible opacity-100' : 'invisible opacity-0'
-                      }`}
+                      className={`absolute left-1/2 top-full w-80 -translate-x-1/2 pt-4 transition-all duration-200 ${isServicesOpen ? 'visible opacity-100' : 'invisible opacity-0'
+                        }`}
                     >
                       <div className="rounded-xl border border-border bg-card p-4 shadow-xl">
                         <div className="space-y-1">
@@ -99,9 +98,8 @@ const Header = () => {
                 ) : (
                   <a
                     href={link.href}
-                    className={`nav-link ${
-                      isScrolled ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white'
-                    }`}
+                    className={`nav-link font-semibold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
+                      }`}
                   >
                     {link.name}
                   </a>
@@ -113,17 +111,18 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button
-              asChild
-              className="bg-primary text-primary-foreground hover:bg-destructive transition-colors"
+              onClick={handleWhatsApp}
+              className="bg-primary text-primary-foreground hover:bg-destructive transition-colors shadow-lg"
             >
-              <a href="#contacto">Solicitar Cotización</a>
+              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-5 w-5" />
+              Solicitar Cotización
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden ${isScrolled ? 'text-foreground' : 'text-white'}`}
+            className={`lg:hidden ${(isScrolled || !isHome) ? 'text-foreground' : 'text-white'}`}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -132,9 +131,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden transition-all duration-300 ${
-          isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}
+        className={`lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+          }`}
       >
         <div className="border-t border-border bg-card px-4 py-6">
           <div className="flex flex-col gap-4">
@@ -149,10 +147,14 @@ const Header = () => {
               </a>
             ))}
             <Button
-              asChild
+              onClick={() => {
+                handleWhatsApp();
+                setIsMobileMenuOpen(false);
+              }}
               className="mt-4 w-full bg-primary text-primary-foreground hover:bg-destructive transition-colors"
             >
-              <a href="#contacto">Solicitar Cotización</a>
+              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-5 w-5" />
+              Solicitar Cotización
             </Button>
           </div>
         </div>

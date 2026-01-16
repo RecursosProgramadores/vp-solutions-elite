@@ -3,19 +3,19 @@ import { Shield, Award, Leaf, Building2, Users, Clock } from 'lucide-react';
 const TrustSection = () => {
   const certifications = [
     {
-      icon: Shield,
+      image: '/iso9001.jpg',
       name: 'ISO 9001:2015',
       title: 'Sistema de Gestión de Calidad',
       description: 'Certificación que garantiza procesos estandarizados y mejora continua en todos nuestros servicios.',
     },
     {
-      icon: Award,
+      image: '/iso37001.jpg',
       name: 'ISO 37001:2016',
       title: 'Sistema de Gestión Antisoborno',
       description: 'Compromiso con la ética empresarial y la transparencia en todas nuestras operaciones.',
     },
     {
-      icon: Leaf,
+      image: '/iso14001.png',
       name: 'ISO 14001:2015',
       title: 'Sistema de Gestión Ambiental',
       description: 'Responsabilidad ambiental y prácticas sostenibles en nuestra operación diaria.',
@@ -53,8 +53,12 @@ const TrustSection = () => {
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-center transition-all card-hover"
             >
               <div className="mb-6 flex justify-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-                  <cert.icon className="h-10 w-10 text-primary" />
+                <div className="flex h-24 w-auto items-center justify-center overflow-hidden rounded-xl bg-white p-2 shadow-sm transition-all group-hover:shadow-md">
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
               </div>
               <span className="mb-2 block text-2xl font-bold text-primary">{cert.name}</span>
@@ -65,16 +69,16 @@ const TrustSection = () => {
         </div>
 
         {/* Trust Factors Banner */}
-        <div className="rounded-2xl p-8 md:p-12" style={{ background: 'var(--gradient-hero)' }}>
+        <div className="rounded-2xl border border-border bg-card p-8 md:p-12 shadow-sm">
           <div className="grid gap-8 md:grid-cols-3">
             {trustFactors.map((factor) => (
-              <div key={factor.label} className="flex items-center gap-4 text-white">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
-                  <factor.icon className="h-7 w-7 text-vp-green" />
+              <div key={factor.label} className="flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/5">
+                  <factor.icon className="h-7 w-7 text-[#0075bf]" />
                 </div>
                 <div>
-                  <span className="block text-lg font-bold">{factor.value}</span>
-                  <span className="text-sm text-white/70">{factor.label}</span>
+                  <span className="block text-lg font-bold text-[#77787b]">{factor.value}</span>
+                  <span className="text-sm font-medium text-[#77787b]/80">{factor.label}</span>
                 </div>
               </div>
             ))}

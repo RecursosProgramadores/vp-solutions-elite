@@ -5,13 +5,23 @@ const Services = () => {
   const services = [
     {
       icon: Server,
+      image: '/Soporte.jpg',
       title: 'Soporte de Servidores y Storage',
       description: 'Mantenimiento preventivo y correctivo de servidores, storage y equipos de red. Respuesta rápida y técnicos certificados para mantener su infraestructura funcionando 24/7.',
       features: ['Mantenimiento preventivo', 'Soporte correctivo', 'Monitoreo continuo', 'Técnicos certificados'],
       highlight: true,
     },
     {
+      icon: ShoppingCart,
+      image: '/Hardware.png',
+      title: 'Venta de Hardware Empresarial',
+      description: 'Servidores, storage y equipamiento de red de marcas líderes. Configuramos la solución perfecta para las necesidades de su organización.',
+      features: ['Marcas líderes', 'Configuración a medida', 'Instalación incluida', 'Capacitación'],
+      highlight: false,
+    },
+    {
       icon: HardDrive,
+      image: '/Venta.png',
       title: 'Venta de Partes y Piezas',
       description: 'Discos duros, memorias RAM, procesadores y componentes originales de las mejores marcas. Stock disponible para entrega inmediata.',
       features: ['Componentes originales', 'Garantía incluida', 'Entrega rápida', 'Asesoría técnica'],
@@ -19,19 +29,18 @@ const Services = () => {
     },
     {
       icon: Wrench,
+      image: '/Alquiler.png',
       title: 'Alquiler de Servidores',
       description: 'Servidores en alquiler con mantenimiento incluido. Solución ideal para proyectos temporales o mientras planifica su inversión definitiva.',
       features: ['Mantenimiento incluido', 'Contratos flexibles', 'Soporte técnico', 'Actualización de equipos'],
       highlight: false,
     },
-    {
-      icon: ShoppingCart,
-      title: 'Venta de Hardware Empresarial',
-      description: 'Servidores, storage y equipamiento de red de marcas líderes. Configuramos la solución perfecta para las necesidades de su organización.',
-      features: ['Marcas líderes', 'Configuración a medida', 'Instalación incluida', 'Capacitación'],
-      highlight: false,
-    },
   ];
+
+  const handleWhatsApp = (serviceTitle: string) => {
+    const message = `Hola, me interesa solicitar información sobre: ${serviceTitle}`;
+    window.open(`https://wa.me/51938152389?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   return (
     <section id="servicios" className="section-padding bg-background">
@@ -55,55 +64,61 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group relative overflow-hidden rounded-2xl border bg-card p-8 transition-all duration-300 card-hover ${
-                service.highlight
-                  ? 'border-primary/30 shadow-lg'
-                  : 'border-border hover:border-primary/20'
-              }`}
+              className={`group relative overflow-hidden rounded-2xl border bg-card transition-all duration-300 card-hover ${service.highlight
+                ? 'border-primary/30 shadow-lg'
+                : 'border-border hover:border-primary/20'
+                }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {service.highlight && (
-                <div className="absolute right-4 top-4">
-                  <span className="rounded-full bg-vp-red/10 px-3 py-1 text-xs font-semibold text-destructive">
-                    Más solicitado
-                  </span>
-                </div>
-              )}
-              
-              <div className="mb-6 flex items-start gap-5">
-                <div className="service-icon shrink-0">
-                  <service.icon className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="mb-3 text-xl font-bold text-foreground lg:text-2xl">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
+              {/* Image Section */}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-              {/* Features */}
-              <div className="mb-6 grid grid-cols-2 gap-3">
-                {service.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-vp-green" />
-                    <span className="text-sm text-muted-foreground">{feature}</span>
+                {/* Icon Overlay */}
+                <div className="absolute top-4 left-4 rounded-xl bg-primary/90 p-3 shadow-lg text-white backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                  <service.icon className="h-6 w-6" />
+                </div>
+
+                {service.highlight && (
+                  <div className="absolute right-4 top-4">
+                    <span className="rounded-full bg-destructive px-3 py-1 text-xs font-semibold text-white">
+                      Más solicitado
+                    </span>
                   </div>
-                ))}
+                )}
               </div>
 
-              <Button
-                variant="ghost"
-                className="group/btn flex items-center gap-2 p-0 text-primary hover:bg-transparent hover:text-primary/80"
-                asChild
-              >
-                <a href="#contacto">
-                  Solicitar información
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                </a>
-              </Button>
+              <div className="p-8 pt-10 text-center">
+                <h3 className="mb-4 text-xl font-bold text-foreground lg:text-2xl">
+                  {service.title}
+                </h3>
+                <p className="mb-6 text-muted-foreground line-clamp-2">
+                  {service.description}
+                </p>
+
+                {/* Features */}
+                <div className="mb-8 flex flex-wrap justify-center gap-x-4 gap-y-2">
+                  {service.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-1.5">
+                      <div className="h-1.5 w-1.5 rounded-full bg-vp-green" />
+                      <span className="text-xs font-medium text-muted-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Button
+                  onClick={() => handleWhatsApp(service.title)}
+                  className="h-11 w-full bg-primary text-primary-foreground hover:bg-destructive transition-all"
+                >
+                  Solicitar información por WhatsApp
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
             </div>
           ))}
         </div>

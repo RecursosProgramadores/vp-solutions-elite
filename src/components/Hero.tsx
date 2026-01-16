@@ -1,121 +1,106 @@
-import { MessageCircle, Headphones, FileText, Shield, Award, Leaf } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
-  const isoBadges = [
-    { icon: Shield, label: 'ISO 9001', description: 'Gestión de Calidad' },
-    { icon: Award, label: 'ISO 37001', description: 'Antisoborno' },
-    { icon: Leaf, label: 'ISO 14001', description: 'Gestión Ambiental' },
-  ];
-
   const handleWhatsApp = () => {
-    window.open('https://wa.me/51999999999?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios', '_blank');
+    window.open('https://wa.me/51938152389?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios', '_blank');
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen overflow-hidden">
-      {/* Background */}
-      <div 
-        className="absolute inset-0"
-        style={{ background: 'var(--gradient-hero)' }}
-      >
-        {/* Tech pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, hsl(200 100% 50% / 0.3) 0%, transparent 50%),
-                             radial-gradient(circle at 75% 75%, hsl(195 100% 45% / 0.2) 0%, transparent 50%)`,
-          }} />
+    <section id="inicio" className="relative min-h-screen w-full overflow-hidden bg-[#0075bf]">
+      {/* Background Video - Visible on laptop and mobile */}
+      <div className="absolute inset-0 z-0 opacity-100 md:opacity-40 overflow-hidden">
+        <div className="relative h-full w-full pointer-events-none">
+          <iframe
+            src="https://player.vimeo.com/video/1154827490?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
+            className="absolute top-1/2 left-1/2 min-h-full min-w-full h-[56.25vw] w-[177.77vh] -translate-x-1/2 -translate-y-1/2 scale-[2] md:scale-100 object-cover"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="0_Globe_Earth_1920x1080"
+          />
         </div>
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `linear-gradient(hsl(200 100% 60%) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(200 100% 60%) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
-        }} />
       </div>
 
-      <div className="container-vp relative z-10 flex min-h-screen flex-col justify-center pb-20 pt-32">
-        <div className="mx-auto max-w-4xl text-center">
-          {/* Badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm animate-fade-up">
-            <span className="h-2 w-2 rounded-full bg-accent animate-pulse-subtle" />
-            <span className="text-sm font-medium text-white/90">+13 años de experiencia en el Perú</span>
-          </div>
+      {/* Uniform Overlay Capa - #0075bf with higher opacity on mobile to ensure corporate color dominance */}
+      <div
+        className="absolute inset-0 z-10 w-full bg-[#0075bf]/80 md:bg-[#0075bf]/60"
+      />
 
-          {/* Main Headline */}
-          <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up delay-100">
-            Soluciones TI de{' '}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, hsl(91 52% 56%) 0%, hsl(91 52% 70%) 100%)' }}>Alta Calidad</span>{' '}
-            para el Perú
+      <div className="container-vp relative z-20 flex min-h-screen flex-col items-center justify-center py-20 text-center">
+        <div className="mx-auto flex max-w-4xl flex-col items-center">
+
+          {/* Main Title */}
+          <h1 className="mb-6 animate-fade-in-up text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Soluciones TI de <span className="text-[#8ec955]">Alta Calidad</span> para el Perú
           </h1>
 
-          {/* Subheadline */}
-          <p className="mb-8 text-lg text-white/80 sm:text-xl md:text-2xl animate-fade-up delay-200">
+          {/* Subtitle */}
+          <p className="mb-10 animate-fade-in-up text-lg text-white/90 sm:text-xl md:text-2xl" style={{ animationDelay: '0.1s' }}>
             Tu aliado estratégico en tecnología desde hace 13 años
           </p>
 
-          {/* Services highlight */}
-          <div className="mb-10 flex flex-wrap items-center justify-center gap-3 text-sm text-white/70 animate-fade-up delay-300">
+          {/* Services highlight bullets */}
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-white sm:gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-vp-green" />
+              <span className="h-2 w-2 rounded-full bg-[#8ec955]" />
               Soporte experto en servidores y storage
             </span>
-            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline text-white/40">•</span>
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-vp-green" />
+              <span className="h-2 w-2 rounded-full bg-[#8ec955]" />
               Venta y alquiler de hardware
             </span>
-            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline text-white/40">•</span>
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-vp-green" />
+              <span className="h-2 w-2 rounded-full bg-[#8ec955]" />
               Mantenimiento preventivo y correctivo
             </span>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-up delay-400">
+          {/* CTA Buttons - Using VP Green #8ec955 */}
+          <div className="flex animate-fade-in-up flex-col items-center gap-4 sm:flex-row sm:justify-center" style={{ animationDelay: '0.3s' }}>
             <Button
-              size="lg"
               onClick={handleWhatsApp}
-              className="group flex items-center gap-2 bg-whatsapp px-8 py-6 text-lg font-semibold text-white shadow-lg transition-all hover:bg-whatsapp/90 hover:shadow-xl"
+              size="lg"
+              className="h-14 bg-[#8ec955] px-10 text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-[#8ec955]/90 sm:w-auto"
             >
-              <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" />
-              Contáctanos por WhatsApp
+              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-6 w-6" />
+              Solicitar Cotización
             </Button>
             <Button
-              size="lg"
-              asChild
-              className="flex items-center gap-2 bg-accent px-8 py-6 text-lg font-semibold text-white shadow-lg transition-all hover:bg-accent/90 hover:shadow-xl"
-            >
-              <a href="#mesa-de-ayuda">
-                <Headphones className="h-5 w-5" />
-                Mesa de Ayuda
-              </a>
-            </Button>
-            <Button
-              size="lg"
               variant="outline"
+              size="lg"
               asChild
-              className="flex items-center gap-2 border-white/30 bg-white/10 px-8 py-6 text-lg font-semibold text-white backdrop-blur-sm hover:bg-white/20"
+              className="h-14 border-2 border-white/20 bg-white/10 px-10 text-lg font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:w-auto"
             >
-              <a href="#contacto">
-                <FileText className="h-5 w-5" />
-                Solicitar Cotización
-              </a>
+              <a href="#servicios">Nuestros Servicios</a>
             </Button>
           </div>
+        </div>
 
-          {/* ISO Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: '0.5s' }}>
-            {isoBadges.map((badge) => (
+        {/* ISO Badges Section */}
+        <div className="mt-16 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-white mb-1">Certificaciones Internacionales</h2>
+            <p className="text-sm text-white/70">Garantía de excelencia y compromiso ético</p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {[
+              { img: "/iso9001.jpg", title: "ISO 9001", label: "Calidad" },
+              { img: "/iso37001.jpg", title: "ISO 37001", label: "Antisoborno" },
+              { img: "/iso14001.png", title: "ISO 14001", label: "Ambiental" }
+            ].map((iso, index) => (
               <div
-                key={badge.label}
-                className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-sm transition-all hover:border-primary/50 hover:bg-white/15"
+                key={index}
+                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md transition-all hover:bg-white/10"
               >
-                <badge.icon className="h-8 w-8 text-vp-green" />
+                <div className="overflow-hidden rounded-lg bg-white p-1">
+                  <img src={iso.img} alt={iso.title} className="h-8 w-auto object-contain" />
+                </div>
                 <div className="text-left">
-                  <span className="block text-sm font-bold text-white">{badge.label}</span>
-                  <span className="text-xs text-white/60">{badge.description}</span>
+                  <p className="text-xs font-bold text-white leading-tight">{iso.title}</p>
+                  <p className="text-[10px] uppercase tracking-wider text-[#8ec955] font-bold">{iso.label}</p>
                 </div>
               </div>
             ))}
@@ -123,10 +108,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" className="w-full fill-background">
-          <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" />
+      {/* Wave transition */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="h-16 w-full fill-background">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C58.34,65.34,136.67,52.33,212.43,60.11c31.62,3.24,63.14,9.2,95.66,12.62a368.52,368.52,0,0,0,13.3,0Z" className="shape-fill"></path>
         </svg>
       </div>
     </section>

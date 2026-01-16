@@ -1,9 +1,9 @@
-import { Mail, Phone, MapPin, MessageCircle, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Contact = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/51999999999?text=Hola,%20quisiera%20solicitar%20una%20cotización', '_blank');
+    window.open('https://wa.me/51938152389?text=Hola,%20quisiera%20solicitar%20una%20cotización', '_blank');
   };
 
   const contactInfo = [
@@ -56,7 +56,7 @@ const Contact = () => {
               size="lg"
               className="mb-12 h-14 bg-whatsapp px-8 text-lg font-semibold text-white hover:bg-whatsapp/90"
             >
-              <MessageCircle className="mr-2 h-6 w-6" />
+              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-6 w-6" />
               Contáctanos por WhatsApp
             </Button>
 
@@ -83,7 +83,7 @@ const Contact = () => {
           </div>
 
           {/* Right Column - Office Hours & Map Placeholder */}
-          <div className="space-y-8">
+          <div className="space-y-8 max-w-md lg:ml-auto">
             {/* Office Hours */}
             <div className="rounded-2xl border border-border bg-card p-8">
               <div className="mb-6 flex items-center gap-3">
@@ -107,7 +107,7 @@ const Contact = () => {
             </div>
 
             {/* Quote Request Box */}
-            <div className="rounded-2xl p-8" style={{ background: 'var(--gradient-hero)' }}>
+            <div className="rounded-2xl p-8" style={{ backgroundColor: '#77787b' }}>
               <h3 className="mb-4 text-xl font-bold text-white">Solicite una cotización</h3>
               <p className="mb-6 text-white/80">
                 Envíenos los detalles de su proyecto y le prepararemos una propuesta personalizada en menos de 24 horas.

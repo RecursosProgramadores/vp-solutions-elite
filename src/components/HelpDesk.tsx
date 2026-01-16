@@ -1,9 +1,18 @@
 import { useState } from 'react';
-import { Send, Headphones, MessageCircle, Phone, Mail } from 'lucide-react';
+import { Send, Headphones, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+
+const WhatsAppIcon = ({ className, forceGreen = false }: { className?: string; forceGreen?: boolean }) => (
+  <img
+    src="/wstp.svg"
+    alt="WhatsApp"
+    className={className}
+    style={forceGreen ? { filter: 'invert(58%) sepia(90%) saturate(400%) hue-rotate(92deg) brightness(95%) contrast(90%)' } : undefined}
+  />
+);
 
 const HelpDesk = () => {
   const { toast } = useToast();
@@ -37,10 +46,10 @@ const HelpDesk = () => {
 
   const contactMethods = [
     {
-      icon: MessageCircle,
+      icon: (props: any) => <WhatsAppIcon {...props} forceGreen={true} />,
       title: 'WhatsApp',
-      value: '+51 999 999 999',
-      action: () => window.open('https://wa.me/51999999999', '_blank'),
+      value: '+51 938 152 389',
+      action: () => window.open('https://wa.me/51938152389', '_blank'),
       primary: true,
     },
     {
@@ -88,18 +97,16 @@ const HelpDesk = () => {
                 <button
                   key={method.title}
                   onClick={method.action}
-                  className={`group flex w-full items-center gap-4 rounded-xl border p-6 text-left transition-all ${
-                    method.primary
-                      ? 'border-whatsapp/30 bg-whatsapp/5 hover:border-whatsapp/50 hover:bg-whatsapp/10'
-                      : 'border-border bg-card hover:border-primary/30 hover:bg-primary/5'
-                  }`}
+                  className={`group flex w-full items-center gap-4 rounded-xl border p-6 text-left transition-all ${method.primary
+                    ? 'border-whatsapp/30 bg-whatsapp/5 hover:border-whatsapp/50 hover:bg-whatsapp/10'
+                    : 'border-border bg-card hover:border-primary/30 hover:bg-primary/5'
+                    }`}
                 >
                   <div
-                    className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl transition-colors ${
-                      method.primary
-                        ? 'bg-whatsapp/20 text-whatsapp'
-                        : 'bg-primary/10 text-primary group-hover:bg-accent/20 group-hover:text-accent'
-                    }`}
+                    className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl transition-colors ${method.primary
+                      ? 'bg-whatsapp/20 text-whatsapp'
+                      : 'bg-primary/10 text-primary group-hover:bg-accent/20 group-hover:text-accent'
+                      }`}
                   >
                     <method.icon className="h-7 w-7" />
                   </div>
@@ -168,7 +175,7 @@ const HelpDesk = () => {
                     value={formData.telefono}
                     onChange={handleChange}
                     required
-                    placeholder="+51 999 999 999"
+                    placeholder="+51 938 152 389"
                     className="h-12"
                   />
                 </div>

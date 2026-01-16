@@ -51,9 +51,11 @@ const About = () => {
         <div className="mb-20 grid gap-12 lg:grid-cols-2">
           {/* Company Description */}
           <div>
-            <h3 className="mb-6 text-2xl font-bold text-foreground">
-              VP SOLUTIONS PERU S.A.C.
-            </h3>
+            <img
+              src="/LogoVPS.png"
+              alt="VP SOLUTIONS PERU S.A.C."
+              className="mb-6 h-32 w-auto object-contain"
+            />
             <div className="space-y-4 text-muted-foreground">
               <p className="text-lg leading-relaxed">
                 VP SOLUTIONS PERU S.A.C. es una empresa peruana, integradora de soluciones TI, creada hace más de 10 años (13 años en 2026).
@@ -78,17 +80,29 @@ const About = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition-all hover:shadow-md"
+                className="group relative flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 md:p-10 text-center shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl overflow-hidden"
               >
-                <stat.icon className="mb-4 h-10 w-10 text-primary" />
-                <span className="mb-2 text-4xl font-bold text-primary lg:text-5xl">
+                {/* Accent Bands - The requested #77787b bands */}
+                <div className="absolute left-0 top-0 h-full w-3 bg-[#77787b]" />
+                <div className="absolute left-0 top-0 h-3 w-full bg-[#77787b] opacity-30" />
+
+                <div className="mb-5 rounded-2xl bg-[#77787b]/10 p-4 transition-all duration-300 group-hover:bg-[#77787b] group-hover:scale-110">
+                  <stat.icon className="h-10 w-10 text-[#77787b] transition-colors group-hover:text-white" />
+                </div>
+
+                <span className="mb-1 text-5xl font-black tracking-tighter text-[#77787b] lg:text-7xl">
                   {stat.number}
                 </span>
-                <span className="text-sm text-muted-foreground">{stat.label}</span>
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-[#77787b]/80">
+                  {stat.label}
+                </span>
+
+                {/* Dynamic corner accent */}
+                <div className="absolute -bottom-6 -right-6 h-12 w-12 rounded-full bg-[#77787b]/10 blur-xl transition-all group-hover:scale-[3] group-hover:bg-[#77787b]/20" />
               </div>
             ))}
           </div>
