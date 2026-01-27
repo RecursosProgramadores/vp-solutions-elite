@@ -117,14 +117,6 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 shrink-0 text-vp-green" />
                 <span className="text-sm text-white/70">Lima, Perú</span>
               </div>
-              <div className="flex items-center gap-4 pt-4 border-t border-white/5">
-                <a href="#" className="text-white/40 hover:text-vp-green transition-colors">
-                  <Linkedin className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-white/40 hover:text-vp-green transition-colors">
-                  <Facebook className="h-6 w-6" />
-                </a>
-              </div>
             </div>
           </div>
         </div>

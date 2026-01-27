@@ -6,33 +6,33 @@ const Services = () => {
     {
       icon: Server,
       image: '/Soporte.jpg',
-      title: 'Soporte de Servidores y Storage',
-      description: 'Mantenimiento preventivo y correctivo de servidores, storage y equipos de red. Respuesta rápida y técnicos certificados para mantener su infraestructura funcionando 24/7.',
-      features: ['Mantenimiento preventivo', 'Soporte correctivo', 'Monitoreo continuo', 'Técnicos certificados'],
+      title: '1. INFRAESTRUCTURA TECNOLOGICA',
+      description: 'Diseñamos, implementamos y gestionamos soluciones de infraestructura física y lógica, orientadas a optimizar el rendimiento y la disponibilidad de los entornos tecnológicos:',
+      features: ['Venta, Instalación y configuración de Servidores y Storage', 'Consolidación de entornos tecnológicos con alta disponibilidad', 'Respaldo y continuidad operativa'],
       highlight: true,
     },
     {
-      icon: ShoppingCart,
+      icon: Wrench,
       image: '/Hardware.png',
-      title: 'Venta de Hardware Empresarial',
-      description: 'Servidores, storage y equipamiento de red de marcas líderes. Configuramos la solución perfecta para las necesidades de su organización.',
-      features: ['Marcas líderes', 'Configuración a medida', 'Instalación incluida', 'Capacitación'],
+      title: '2. SOPORTE ENTERPRISE MULTIMARCA 24x7',
+      description: 'El mantenimiento de servidores y de los sistemas de almacenamiento es esencial para asegurar la disponibilidad, seguridad y eficiencia de la infraestructura IT. Ofrecemos acuerdos de nivel de servicio (SLA) adaptados a sus necesidades.',
+      features: ['Mantenimiento Preventivo – Correctivo', 'Actualización de Firmware', 'Asistencia Inmediata', 'Niveles de Servicio 24x7x4', 'Técnicos Certificados'],
       highlight: false,
     },
     {
       icon: HardDrive,
       image: '/Venta.png',
-      title: 'Venta de Partes y Piezas',
-      description: 'Discos duros, memorias RAM, procesadores y componentes originales de las mejores marcas. Stock disponible para entrega inmediata.',
-      features: ['Componentes originales', 'Garantía incluida', 'Entrega rápida', 'Asesoría técnica'],
+      title: '3. SERVICIOS DE HARDWARE IT | Spare as a Service',
+      description: 'Obtenga las piezas de repuesto que necesita para que su infraestructura IT funcione sin problemas, donde y cuando las necesite. Contamos con las mejores opciones en tiempos de envíos.',
+      features: ['Repuestos de alta calidad', 'Envíos rápidos', 'Stock Disponible', 'Garantía Total'],
       highlight: false,
     },
     {
-      icon: Wrench,
+      icon: ShoppingCart,
       image: '/Alquiler.png',
-      title: 'Alquiler de Servidores',
-      description: 'Servidores en alquiler con mantenimiento incluido. Solución ideal para proyectos temporales o mientras planifica su inversión definitiva.',
-      features: ['Mantenimiento incluido', 'Contratos flexibles', 'Soporte técnico', 'Actualización de equipos'],
+      title: '4. EQUIPAMIENTO TECNOLOGICO',
+      description: 'Ofrecemos soluciones de cómputo de las mejores marcas: laptops, equipos de escritorio y monitores. La línea de equipos empresariales más inteligentes y seguros del mundo.',
+      features: ['Laptops y Equipos de Escritorio', 'Monitores Profesionales', 'Equipos Empresariales Seguros', 'Marcas Líderes'],
       highlight: false,
     },
   ];
@@ -102,13 +102,21 @@ const Services = () => {
                 </p>
 
                 {/* Features */}
-                <div className="mb-8 flex flex-wrap justify-center gap-x-4 gap-y-2">
+                <div className="mb-6 flex flex-wrap justify-center gap-x-4 gap-y-2">
                   {service.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-1.5">
                       <div className="h-1.5 w-1.5 rounded-full bg-vp-green" />
                       <span className="text-xs font-medium text-muted-foreground">{feature}</span>
                     </div>
                   ))}
+                </div>
+
+                {/* Certifications */}
+                <div className="mb-8 border-t border-border/50 pt-6">
+                  <p className="text-sm font-semibold text-foreground mb-2">Certificaciones</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Contamos con las certificaciones más importantes del sector que garantizan la calidad y seguridad de nuestros servicios.
+                  </p>
                 </div>
 
                 <Button
