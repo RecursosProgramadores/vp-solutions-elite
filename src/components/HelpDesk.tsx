@@ -5,12 +5,16 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
-const WhatsAppIcon = ({ className, forceGreen = false }: { className?: string; forceGreen?: boolean }) => (
+const WhatsAppIcon = ({ className, forceGreen = false, white = false }: { className?: string; forceGreen?: boolean; white?: boolean }) => (
   <img
     src="/wstp.svg"
     alt="WhatsApp"
     className={className}
-    style={forceGreen ? { filter: 'invert(58%) sepia(90%) saturate(400%) hue-rotate(92deg) brightness(95%) contrast(90%)' } : undefined}
+    style={
+      white ? { filter: 'brightness(0) invert(1)' } :
+        forceGreen ? { filter: 'invert(58%) sepia(90%) saturate(400%) hue-rotate(92deg) brightness(95%) contrast(90%)' } :
+          undefined
+    }
   />
 );
 
@@ -46,8 +50,8 @@ const HelpDesk = () => {
 
   const contactMethods = [
     {
-      icon: (props: any) => <WhatsAppIcon {...props} forceGreen={true} />,
-      title: 'WhatsApp',
+      icon: (props: any) => <WhatsAppIcon {...props} white={true} />,
+      title: 'WhatsApp Soporte',
       value: '+51 938 152 389',
       action: () => window.open('https://wa.me/51938152389', '_blank'),
       primary: true,
@@ -55,15 +59,15 @@ const HelpDesk = () => {
     {
       icon: Mail,
       title: 'Email Soporte',
-      value: 'victor.portocarrero@vpsolutions.com.pe',
-      action: () => window.location.href = 'mailto:victor.portocarrero@vpsolutions.com.pe',
+      value: 'ventas@vpsolutions.com.pe',
+      action: () => window.location.href = 'mailto:ventas@vpsolutions.com.pe',
       primary: false,
     },
     {
       icon: Phone,
-      title: 'Teléfono',
-      value: '+51 (01) 123-4567',
-      action: () => window.location.href = 'tel:+5101234567',
+      title: 'Teléfono Directo',
+      value: '+51 938 152 389',
+      action: () => window.location.href = 'tel:+51938152389',
       primary: false,
     },
   ];
@@ -73,15 +77,15 @@ const HelpDesk = () => {
       <div className="container-vp">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-vp-green/10 px-4 py-1.5 text-sm font-semibold text-accent">
-            <Headphones className="h-4 w-4" />
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-vp-green/10 px-5 py-2 text-base font-black text-accent">
+            <Headphones className="h-5 w-5" />
             Mesa de Ayuda
           </span>
-          <h2 className="mb-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mb-6 text-4xl font-black text-foreground sm:text-5xl lg:text-6xl">
             ¿Necesitas{' '}
-            <span className="text-primary">asistencia técnica</span>?
+            <span className="text-primary tracking-tighter">asistencia técnica</span>?
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-2xl text-muted-foreground font-medium leading-relaxed">
             Nuestro equipo de soporte está listo para ayudarte. Completa el formulario o contáctanos directamente.
           </p>
         </div>
@@ -89,7 +93,7 @@ const HelpDesk = () => {
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Contact Methods */}
           <div>
-            <h3 className="mb-8 text-2xl font-bold text-foreground">
+            <h3 className="mb-8 text-3xl font-black text-foreground tracking-tight">
               Canales de atención
             </h3>
             <div className="space-y-4">
@@ -97,22 +101,22 @@ const HelpDesk = () => {
                 <button
                   key={method.title}
                   onClick={method.action}
-                  className={`group flex w-full items-center gap-4 rounded-xl border p-6 text-left transition-all ${method.primary
+                  className={`group flex w-full items-center gap-6 rounded-xl border p-6 text-left transition-all ${method.primary
                     ? 'border-whatsapp/30 bg-whatsapp/5 hover:border-whatsapp/50 hover:bg-whatsapp/10'
                     : 'border-border bg-card hover:border-primary/30 hover:bg-primary/5'
                     }`}
                 >
                   <div
-                    className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl transition-colors ${method.primary
-                      ? 'bg-whatsapp/20 text-whatsapp'
-                      : 'bg-primary/10 text-primary group-hover:bg-accent/20 group-hover:text-accent'
+                    className={`flex shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${method.primary
+                      ? 'h-16 w-16 bg-whatsapp text-white shadow-md'
+                      : 'h-14 w-14 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white shadow-sm'
                       }`}
                   >
-                    <method.icon className="h-7 w-7" />
+                    <method.icon className={method.primary ? "h-9 w-9" : "h-7 w-7"} />
                   </div>
                   <div>
-                    <span className="block text-sm text-muted-foreground">{method.title}</span>
-                    <span className="text-lg font-semibold text-foreground">{method.value}</span>
+                    <span className="block text-sm font-black uppercase tracking-widest text-muted-foreground mb-1">{method.title}</span>
+                    <span className="text-2xl font-black text-foreground tracking-tight">{method.value}</span>
                   </div>
                 </button>
               ))}
@@ -129,12 +133,12 @@ const HelpDesk = () => {
 
           {/* Contact Form */}
           <div className="rounded-2xl border border-border bg-card p-8 shadow-lg">
-            <h3 className="mb-6 text-xl font-bold text-foreground">
+            <h3 className="mb-6 text-2xl font-black text-foreground tracking-tight">
               Formulario de soporte
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="nombre" className="mb-2 block text-sm font-medium text-foreground">
+                <label htmlFor="nombre" className="mb-2 block text-lg font-black text-foreground">
                   Nombres y apellidos *
                 </label>
                 <Input
@@ -150,7 +154,7 @@ const HelpDesk = () => {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-foreground">
+                  <label htmlFor="email" className="mb-2 block text-lg font-black text-foreground">
                     Correo electrónico *
                   </label>
                   <Input
@@ -165,7 +169,7 @@ const HelpDesk = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="telefono" className="mb-2 block text-sm font-medium text-foreground">
+                  <label htmlFor="telefono" className="mb-2 block text-lg font-black text-foreground">
                     Teléfono *
                   </label>
                   <Input
@@ -182,7 +186,7 @@ const HelpDesk = () => {
               </div>
 
               <div>
-                <label htmlFor="detalle" className="mb-2 block text-sm font-medium text-foreground">
+                <label htmlFor="detalle" className="mb-2 block text-lg font-black text-foreground">
                   Detalle del problema / consulta *
                 </label>
                 <Textarea

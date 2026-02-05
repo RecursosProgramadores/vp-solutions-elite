@@ -27,34 +27,34 @@ const Hero = () => {
       />
 
       <div className="container-vp relative z-20 flex min-h-screen flex-col items-center justify-center py-20 text-center">
-        <div className="mx-auto flex max-w-4xl flex-col items-center">
+        <div className="mx-auto flex max-w-5xl flex-col items-center">
 
           {/* Main Title */}
-          <h1 className="mb-6 animate-fade-in-up text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Soluciones TI de <span className="text-[#8ec955]">Alta Calidad</span> para el Perú
+          <h1 className="mb-8 animate-fade-in-up font-outfit text-4xl font-black tracking-tighter text-white sm:text-6xl lg:text-8xl">
+            Experto en Soporte de <span className="text-[#8ec955] drop-shadow-[0_0_20px_rgba(142,201,85,0.3)]">Infraestructura Tecnológica</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mb-10 animate-fade-in-up text-lg text-white/90 sm:text-xl md:text-2xl" style={{ animationDelay: '0.1s' }}>
+          <p className="mb-12 animate-fade-in-up font-outfit text-xl text-white/90 sm:text-2xl md:text-3xl font-semibold tracking-tight uppercase md:whitespace-nowrap" style={{ animationDelay: '0.1s' }}>
             Tu aliado estratégico en tecnología desde hace 13 años
           </p>
 
           {/* Services highlight bullets */}
-          <div className="mb-10 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-white sm:gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#8ec955]" />
-              Soporte experto en servidores y storage
-            </span>
-            <span className="hidden sm:inline text-white/40">•</span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#8ec955]" />
-              Venta y alquiler de hardware
-            </span>
-            <span className="hidden sm:inline text-white/40">•</span>
-            <span className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#8ec955]" />
-              Mantenimiento preventivo y correctivo
-            </span>
+          <div className="mb-12 flex flex-wrap items-center justify-center gap-6 text-base font-black text-white sm:gap-4 animate-fade-in-up group" style={{ animationDelay: '0.2s' }}>
+            {[
+              "Infraestructura Tecnológica",
+              "Soporte Enterprise 24x7",
+              "Servicios de Hardware IT",
+              "Equipamiento Tecnológico"
+            ].map((service, i) => (
+              <div key={service} className="flex items-center gap-3">
+                <span className="flex items-center gap-3 rounded-full bg-white/10 px-6 py-3 font-outfit text-sm font-black uppercase tracking-widest text-white backdrop-blur-md border border-white/20 transition-all hover:bg-[#8ec955] hover:text-[#001524] hover:scale-105 hover:border-transparent cursor-default shadow-lg">
+                  <span className="h-2 w-2 rounded-full bg-[#8ec955] transition-colors group-hover:bg-white" />
+                  {service}
+                </span>
+                {i < 3 && <span className="hidden lg:inline text-white/20 text-2xl font-thin mx-2">|</span>}
+              </div>
+            ))}
           </div>
 
           {/* CTA Buttons - Using VP Green #8ec955 */}
@@ -81,8 +81,7 @@ const Hero = () => {
         {/* ISO Badges Section */}
         <div className="mt-16 animate-fade-up" style={{ animationDelay: '0.4s' }}>
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-white mb-1">Certificaciones Internacionales</h2>
-            <p className="text-sm text-white/70">Garantía de excelencia y compromiso ético</p>
+            <h2 className="text-2xl font-black text-white">Certificaciones Internacionales</h2>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
@@ -93,14 +92,14 @@ const Hero = () => {
             ].map((iso, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-md transition-all hover:bg-white/10"
+                className="flex items-center gap-5 rounded-2xl border-2 border-white/10 bg-white/10 p-5 backdrop-blur-md transition-all hover:bg-white/15 hover:border-[#8ec955]/30 hover:scale-105 shadow-lg"
               >
-                <div className="overflow-hidden rounded-lg bg-white p-1">
-                  <img src={iso.img} alt={iso.title} className="h-8 w-auto object-contain" />
+                <div className="overflow-hidden rounded-xl bg-white p-3 shadow-inner">
+                  <img src={iso.img} alt={iso.title} className="h-14 w-auto object-contain" />
                 </div>
                 <div className="text-left">
-                  <p className="text-xs font-bold text-white leading-tight">{iso.title}</p>
-                  <p className="text-[10px] uppercase tracking-wider text-[#8ec955] font-bold">{iso.label}</p>
+                  <p className="text-lg font-black text-white leading-tight tracking-tight">{iso.title}</p>
+                  <p className="text-base uppercase tracking-[0.15em] text-[#8ec955] font-black">{iso.label}</p>
                 </div>
               </div>
             ))}

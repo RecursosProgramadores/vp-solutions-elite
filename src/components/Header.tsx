@@ -67,11 +67,11 @@ const Header = () => {
                   >
                     <a
                       href={link.href}
-                      className={`nav-link flex items-center gap-1 font-semibold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
+                      className={`nav-link flex items-center gap-1.5 text-lg font-bold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
                         }`}
                     >
                       {link.name}
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-5 w-5" />
                     </a>
 
                     {/* Mega Menu */}
@@ -87,8 +87,8 @@ const Header = () => {
                               href={service.href}
                               className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-secondary"
                             >
-                              <service.icon className="h-5 w-5 text-primary" />
-                              <span className="text-sm font-medium text-foreground">{service.title}</span>
+                              <service.icon className="h-6 w-6 text-primary" />
+                              <span className="text-base font-semibold text-foreground">{service.title}</span>
                             </a>
                           ))}
                         </div>
@@ -98,7 +98,7 @@ const Header = () => {
                 ) : (
                   <a
                     href={link.href}
-                    className={`nav-link font-semibold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
+                    className={`nav-link text-lg font-bold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
                       }`}
                   >
                     {link.name}
@@ -112,9 +112,10 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button
               onClick={handleWhatsApp}
-              className="bg-primary text-primary-foreground hover:bg-destructive transition-colors shadow-lg"
+              size="lg"
+              className="h-12 bg-primary px-6 text-lg font-bold text-primary-foreground hover:bg-destructive transition-all hover:scale-105 shadow-xl"
             >
-              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-5 w-5" />
+              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-6 w-6" />
               Solicitar Cotización
             </Button>
           </div>

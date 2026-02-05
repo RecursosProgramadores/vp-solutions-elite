@@ -43,11 +43,12 @@ const Services = () => {
   };
 
   return (
-    <section id="servicios" className="section-padding bg-background">
+    <section id="servicios" className="section-padding bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background pointer-events-none" />
       <div className="container-vp">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-5 py-2 text-base font-bold text-primary">
             Nuestros Servicios
           </span>
           <h2 className="mb-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
@@ -64,12 +65,14 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group relative overflow-hidden rounded-2xl border bg-card transition-all duration-300 card-hover ${service.highlight
+              className={`group relative overflow-hidden rounded-3xl border-2 bg-card p-10 transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 ${service.highlight
                 ? 'border-primary/30 shadow-lg'
-                : 'border-border hover:border-primary/20'
+                : 'border-border'
                 }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              {/* Decorative background element */}
+              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/5 transition-transform duration-700 group-hover:scale-150" />
               {/* Image Section */}
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -97,34 +100,34 @@ const Services = () => {
                 <h3 className="mb-4 text-xl font-bold text-foreground lg:text-2xl">
                   {service.title}
                 </h3>
-                <p className="mb-6 text-muted-foreground line-clamp-2">
+                <p className="mb-6 text-lg text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Features */}
-                <div className="mb-6 flex flex-wrap justify-center gap-x-4 gap-y-2">
+                <div className="mb-6 flex flex-wrap justify-center gap-x-5 gap-y-2.5">
                   {service.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-1.5">
-                      <div className="h-1.5 w-1.5 rounded-full bg-vp-green" />
-                      <span className="text-xs font-medium text-muted-foreground">{feature}</span>
+                    <div key={feature} className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-vp-green" />
+                      <span className="text-sm font-bold text-foreground/80">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Certifications */}
                 <div className="mb-8 border-t border-border/50 pt-6">
-                  <p className="text-sm font-semibold text-foreground mb-2">Certificaciones</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xl font-bold text-foreground mb-3">Certificaciones</p>
+                  <p className="text-sm font-medium text-muted-foreground leading-relaxed italic">
                     Contamos con las certificaciones más importantes del sector que garantizan la calidad y seguridad de nuestros servicios.
                   </p>
                 </div>
 
                 <Button
                   onClick={() => handleWhatsApp(service.title)}
-                  className="h-11 w-full bg-primary text-primary-foreground hover:bg-destructive transition-all"
+                  className="h-14 w-full bg-[#8ec955] text-white hover:bg-[#7ab844] transition-all hover:scale-[1.05] shadow-xl shadow-[#8ec955]/30 text-xl font-black uppercase tracking-tighter"
                 >
-                  Solicitar información por WhatsApp
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <img src="/wstp.svg" alt="WhatsApp" className="mr-3 h-7 w-7 brightness-0 invert" />
+                  CONSULTAR WHATSAPP
                 </Button>
               </div>
             </div>

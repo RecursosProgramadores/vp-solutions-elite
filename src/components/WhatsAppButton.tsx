@@ -12,7 +12,7 @@ const WhatsAppButton = () => {
       className="floating-whatsapp"
       aria-label="Contactar por WhatsApp"
     >
-      <img src="/wstp.svg" alt="WhatsApp" className="h-7 w-7" />
+      <img src="/wstp.svg" alt="WhatsApp" className="h-12 w-12" />
     </button>
   );
 };

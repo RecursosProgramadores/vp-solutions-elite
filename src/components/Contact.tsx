@@ -22,8 +22,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Teléfono',
-      value: '+51 (01) 123-4567',
-      action: () => window.location.href = 'tel:+5101234567',
+      value: '+51 938 152 389',
+      action: () => window.location.href = 'tel:+51938152389',
     },
     {
       icon: MapPin,
@@ -39,14 +39,14 @@ const Contact = () => {
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left Column */}
           <div>
-            <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+            <span className="mb-4 inline-block rounded-full bg-primary/10 px-5 py-2 text-base font-bold text-primary">
               Contacto
             </span>
             <h2 className="mb-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
               Conversemos sobre{' '}
               <span className="text-primary">su proyecto</span>
             </h2>
-            <p className="mb-8 text-lg text-muted-foreground">
+            <p className="mb-8 text-xl text-muted-foreground leading-relaxed">
               Estamos listos para ayudarle a encontrar la solución perfecta para las necesidades tecnológicas de su organización.
             </p>
 
@@ -72,8 +72,8 @@ const Contact = () => {
                     <info.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <span className="block text-sm text-muted-foreground">{info.title}</span>
-                    <span className={`font-medium text-foreground ${info.action ? 'hover:text-primary' : ''}`}>
+                    <span className="block text-base font-bold text-muted-foreground mb-0.5">{info.title}</span>
+                    <span className={`text-lg font-bold text-foreground ${info.action ? 'hover:text-primary transition-colors' : ''}`}>
                       {info.value}
                     </span>
                   </div>
@@ -91,17 +91,17 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-foreground">Horario de atención</h3>
               </div>
               <div className="space-y-4">
-                <div className="flex justify-between border-b border-border pb-3">
-                  <span className="text-muted-foreground">Lunes - Viernes</span>
-                  <span className="font-semibold text-foreground">8:00 AM - 6:00 PM</span>
+                <div className="flex justify-between border-b border-border pb-4">
+                  <span className="text-lg text-muted-foreground">Lunes - Viernes</span>
+                  <span className="text-lg font-bold text-foreground">8:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between border-b border-border pb-3">
-                  <span className="text-muted-foreground">Sábados</span>
-                  <span className="font-semibold text-foreground">9:00 AM - 1:00 PM</span>
+                <div className="flex justify-between border-b border-border pb-4">
+                  <span className="text-lg text-muted-foreground">Sábados</span>
+                  <span className="text-lg font-bold text-foreground">9:00 AM - 1:00 PM</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Soporte de emergencia</span>
-                  <span className="font-semibold text-vp-green">24/7</span>
+                  <span className="text-lg text-muted-foreground">Soporte de emergencia</span>
+                  <span className="text-xl font-black text-vp-green tracking-tight">24/7</span>
                 </div>
               </div>
             </div>

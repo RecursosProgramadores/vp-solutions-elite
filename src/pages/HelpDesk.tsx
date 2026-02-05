@@ -6,13 +6,18 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
-const WhatsAppIcon = ({ className, forceGreen = false }: { className?: string; forceGreen?: boolean }) => (
+const WhatsAppIcon = ({ className, forceGreen = false, white = false }: { className?: string; forceGreen?: boolean; white?: boolean }) => (
     <img
         src="/wstp.svg"
         alt="WhatsApp"
         className={className}
-        style={forceGreen ? { filter: 'invert(58%) sepia(90%) saturate(400%) hue-rotate(92deg) brightness(95%) contrast(90%)' } : undefined}
+        style={
+            white ? { filter: 'brightness(0) invert(1)' } :
+                forceGreen ? { filter: 'invert(58%) sepia(90%) saturate(400%) hue-rotate(92deg) brightness(95%) contrast(90%)' } :
+                    undefined
+        }
     />
 );
 
@@ -52,19 +57,19 @@ const HelpDeskPage = () => {
 
     const contactMethods = [
         {
-            icon: (props: any) => <WhatsAppIcon {...props} forceGreen={true} />,
+            icon: (props: any) => <WhatsAppIcon {...props} white={true} />,
             title: 'WhatsApp Soporte',
             value: '+51 938 152 389',
             action: () => window.open('https://wa.me/51938152389?text=Hola,%20necesito%20asistencia%20técnica.', '_blank'),
             primary: true,
-            color: 'text-whatsapp',
-            bgColor: 'bg-whatsapp/10'
+            color: 'text-white',
+            bgColor: 'bg-whatsapp'
         },
         {
             icon: Mail,
             title: 'Email Soporte',
-            value: 'victor.portocarrero@vpsolutions.com.pe',
-            action: () => window.open('https://wa.me/51938152389?text=Hola,%20deseo%20contactar%20a%20soporte%20por%20correo.', '_blank'),
+            value: 'ventas@vpsolutions.com.pe',
+            action: () => window.location.href = 'mailto:ventas@vpsolutions.com.pe',
             primary: false,
             color: 'text-primary',
             bgColor: 'bg-primary/10'
@@ -73,7 +78,7 @@ const HelpDeskPage = () => {
             icon: Phone,
             title: 'Teléfono Directo',
             value: '+51 938 152 389',
-            action: () => window.open('https://wa.me/51938152389?text=Hola,%20deseo%20asistencia%20telefónica.', '_blank'),
+            action: () => window.location.href = 'tel:+51938152389',
             primary: false,
             color: 'text-primary',
             bgColor: 'bg-primary/10'
@@ -98,11 +103,11 @@ const HelpDeskPage = () => {
                             <Headphones className="h-4 w-4" />
                             <span>Centro de Soporte Especializado</span>
                         </div>
-                        <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+                        <h1 className="mb-6 font-outfit text-5xl font-black tracking-tighter text-foreground sm:text-7xl">
                             Mesa de <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Ayuda</span>
                         </h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
-                            En **VP SOLUTIONS**, su tranquilidad es nuestra priority. Nuestro equipo de expertos está a su disposición para resolver cualquier inconveniente técnico con la agilidad y precisión que su negocio demanda.
+                        <p className="text-2xl text-muted-foreground leading-relaxed font-medium">
+                            En **VP SOLUTIONS**, su tranquilidad es nuestra prioridad. Nuestro equipo de expertos está a su disposición para resolver cualquier inconveniente técnico con la agilidad y precisión que su negocio demanda.
                         </p>
                     </div>
 
@@ -110,7 +115,7 @@ const HelpDeskPage = () => {
                         {/* Contact Channels */}
                         <div className="lg:col-span-5 space-y-8">
                             <div className="relative">
-                                <h2 className="mb-8 text-2xl font-bold text-foreground">
+                                <h2 className="mb-8 font-outfit text-3xl font-black text-foreground tracking-tighter">
                                     Canales de Atención Directa
                                 </h2>
                                 <div className="grid gap-4">
@@ -118,26 +123,23 @@ const HelpDeskPage = () => {
                                         <button
                                             key={method.title}
                                             onClick={method.action}
-                                            className="group relative flex items-center gap-5 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 text-left transition-all duration-300 hover:border-primary/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
+                                            className="group relative flex items-center gap-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 text-left transition-all duration-300 hover:border-primary/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
                                         >
-                                            <div className={`flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 ${method.bgColor} ${method.color}`}>
-                                                <method.icon className="h-7 w-7" />
+                                            <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${method.primary ? 'bg-whatsapp text-white shadow-md' : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'}`}>
+                                                <method.icon className="h-8 w-8" />
                                             </div>
                                             <div className="flex-1">
-                                                <span className="block text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">{method.title}</span>
-                                                <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                                                <span className="block text-sm font-black uppercase tracking-widest text-muted-foreground mb-1 leading-none">{method.title}</span>
+                                                <span className="font-outfit text-2xl font-black text-foreground group-hover:text-primary transition-colors tracking-tighter">
                                                     {method.value}
                                                 </span>
-                                            </div>
-                                            <div className="opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-2 group-hover:translate-x-0">
-                                                <WhatsAppIcon className="h-5 w-5" forceGreen={true} />
                                             </div>
                                         </button>
                                     ))}
                                 </div>
                                 <div className="mt-10 p-6 rounded-2xl bg-gradient-to-br from-card to-secondary/30 border border-border shadow-inner">
-                                    <p className="text-base text-muted-foreground leading-relaxed italic relative">
-                                        <span className="absolute -top-4 -left-2 text-4xl text-primary/20 font-serif">"</span>
+                                    <p className="text-xl text-muted-foreground leading-relaxed italic relative">
+                                        <span className="absolute -top-6 -left-3 text-6xl text-primary/20 font-serif">"</span>
                                         Garantizamos la continuidad operativa de su empresa mediante una infraestructura TI sólida y un soporte técnico de excelencia. Cada reporte es gestionado con la máxima prioridad profesional.
                                     </p>
                                     <div className="mt-4 flex items-center gap-2">
@@ -169,13 +171,13 @@ const HelpDeskPage = () => {
                             <div className="rounded-3xl border border-border bg-card/80 backdrop-blur-xl p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-accent to-primary" />
                                 <div className="mb-10">
-                                    <h2 className="mb-3 text-3xl font-bold text-foreground tracking-tight">Registro de Ticket</h2>
-                                    <p className="text-muted-foreground">Proporcione los detalles de su requerimiento para una atención inmediata.</p>
+                                    <h2 className="mb-3 text-4xl font-black text-foreground tracking-tighter">Registro de Ticket</h2>
+                                    <p className="text-xl text-muted-foreground font-medium">Proporcione los detalles de su requerimiento para una atención inmediata.</p>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-8">
                                     <div className="space-y-3">
-                                        <label htmlFor="nombre" className="text-sm font-bold text-foreground/80 ml-1">
+                                        <label htmlFor="nombre" className="text-lg font-black text-foreground/80 ml-1">
                                             Nombres y apellidos <span className="text-primary">*</span>
                                         </label>
                                         <Input
@@ -191,7 +193,7 @@ const HelpDeskPage = () => {
 
                                     <div className="grid gap-8 sm:grid-cols-2">
                                         <div className="space-y-3">
-                                            <label htmlFor="email" className="text-sm font-bold text-foreground/80 ml-1">
+                                            <label htmlFor="email" className="text-lg font-black text-foreground/80 ml-1">
                                                 Correo electrónico <span className="text-primary">*</span>
                                             </label>
                                             <Input
@@ -206,7 +208,7 @@ const HelpDeskPage = () => {
                                             />
                                         </div>
                                         <div className="space-y-3">
-                                            <label htmlFor="telefono" className="text-sm font-bold text-foreground/80 ml-1">
+                                            <label htmlFor="telefono" className="text-lg font-black text-foreground/80 ml-1">
                                                 Teléfono / Celular <span className="text-primary">*</span>
                                             </label>
                                             <Input
@@ -223,7 +225,7 @@ const HelpDeskPage = () => {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <label htmlFor="detalle" className="text-sm font-bold text-foreground/80 ml-1">
+                                        <label htmlFor="detalle" className="text-lg font-black text-foreground/80 ml-1">
                                             Detalle del problema / consulta <span className="text-primary">*</span>
                                         </label>
                                         <Textarea
@@ -267,6 +269,7 @@ const HelpDeskPage = () => {
             </main>
 
             <Footer />
+            <WhatsAppButton />
         </div>
     );
 };

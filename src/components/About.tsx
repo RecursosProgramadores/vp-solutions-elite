@@ -38,7 +38,7 @@ const About = () => {
       <div className="container-vp">
         {/* Section Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-5 py-2 text-base font-bold text-primary">
             Sobre Nosotros
           </span>
           <h2 className="mb-6 text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
@@ -56,8 +56,8 @@ const About = () => {
               alt="VP SOLUTIONS PERU S.A.C."
               className="mb-6 h-32 w-auto object-contain"
             />
-            <div className="space-y-4 text-muted-foreground">
-              <p className="text-lg leading-relaxed">
+            <div className="space-y-6 text-muted-foreground text-lg">
+              <p className="text-xl leading-relaxed font-medium text-foreground/90">
                 VP SOLUTIONS PERU S.A.C. es una empresa peruana, integradora de soluciones TI, creada hace más de 10 años (13 años en 2026).
               </p>
               <p className="leading-relaxed">
@@ -97,7 +97,7 @@ const About = () => {
                 <span className="mb-1 text-5xl font-black tracking-tighter text-[#77787b] lg:text-7xl">
                   {stat.number}
                 </span>
-                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-[#77787b]/80">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.2em] text-[#77787b]/80">
                   {stat.label}
                 </span>
 
@@ -118,8 +118,8 @@ const About = () => {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
                 <value.icon className="h-7 w-7 text-primary" />
               </div>
-              <h4 className="mb-4 text-xl font-bold text-foreground">{value.title}</h4>
-              <p className="text-muted-foreground">{value.description}</p>
+              <h4 className="mb-4 text-2xl font-bold text-foreground">{value.title}</h4>
+              <p className="text-lg text-muted-foreground leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>
