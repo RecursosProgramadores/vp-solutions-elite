@@ -5,7 +5,7 @@ const Services = () => {
   const services = [
     {
       icon: Server,
-      image: '/Soporte.jpg',
+      image: '/Soporte.png',
       title: '1. INFRAESTRUCTURA TECNOLOGICA',
       description: 'Diseñamos, implementamos y gestionamos soluciones de infraestructura física y lógica, orientadas a optimizar el rendimiento y la disponibilidad de los entornos tecnológicos:',
       features: ['Venta, Instalación y configuración de Servidores y Storage', 'Consolidación de entornos tecnológicos con alta disponibilidad', 'Respaldo y continuidad operativa'],
@@ -13,7 +13,7 @@ const Services = () => {
     },
     {
       icon: Wrench,
-      image: '/Hardware.png',
+      image: '/Hardware.jpg',
       title: '2. SOPORTE ENTERPRISE MULTIMARCA 24x7',
       description: 'El mantenimiento de servidores y de los sistemas de almacenamiento es esencial para asegurar la disponibilidad, seguridad y eficiencia de la infraestructura IT. Ofrecemos acuerdos de nivel de servicio (SLA) adaptados a sus necesidades.',
       features: ['Mantenimiento Preventivo – Correctivo', 'Actualización de Firmware', 'Asistencia Inmediata', 'Niveles de Servicio 24x7x4', 'Técnicos Certificados'],
@@ -61,7 +61,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
           {services.map((service, index) => (
             <div
               key={service.title}

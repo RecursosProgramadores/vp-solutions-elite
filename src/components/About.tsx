@@ -50,13 +50,13 @@ const About = () => {
         {/* Main Content */}
         <div className="mb-20 grid gap-12 lg:grid-cols-2">
           {/* Company Description */}
-          <div>
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <img
               src="/LogoVPS.png"
               alt="VP SOLUTIONS PERU S.A.C."
-              className="mb-6 h-32 w-auto object-contain"
+              className="mb-6 h-24 sm:h-32 w-auto object-contain"
             />
-            <div className="space-y-6 text-muted-foreground text-lg">
+            <div className="space-y-6 text-muted-foreground text-base sm:text-lg">
               <p className="text-xl leading-relaxed font-medium text-foreground/90">
                 VP SOLUTIONS PERU S.A.C. es una empresa peruana, integradora de soluciones TI, creada hace más de 10 años (13 años en 2026).
               </p>
@@ -80,7 +80,7 @@ const About = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-6">
             {stats.map((stat) => (
               <div
                 key={stat.label}

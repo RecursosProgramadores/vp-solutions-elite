@@ -1,7 +1,6 @@
 import React from 'react';
 
-const logos = [
-  // Governmental/Institutions
+const institutionalLogos = [
   { name: 'Osinfor', src: '/logos/Osinfor.png' },
   { name: 'SENAMHI', src: '/logos/SENAMHI.jpg' },
   { name: 'ZONAREGISTRALPIURA', src: '/logos/ZONAREGISTRALPIURA.jpg' },
@@ -11,7 +10,9 @@ const logos = [
   { name: 'minsa', src: '/logos/minsa.jpg' },
   { name: 'qaliwarma', src: '/logos/qaliwarma.jpg' },
   { name: 'servir', src: '/logos/servir.jpg' },
-  // Technology Partners
+];
+
+const techPartnersLogos = [
   { name: 'HP Enterprise', src: '/logos/Logo-HP-Enterprise.jpg' },
   { name: 'NetApp', src: '/logos/NetApp-logo.png' },
   { name: 'Dell EMC', src: '/logos/dellemc.png' },
@@ -27,10 +28,38 @@ const logos = [
 
 const ClientLogos = () => {
   // Double the logos to create the infinite scroll effect
-  const duplicatedLogos = [...logos, ...logos];
+  const duplicatedLogos = [...institutionalLogos, ...institutionalLogos];
 
   return (
     <section className="py-16 bg-white overflow-hidden border-y border-gray-100">
+      {/* Technology Partners Section (Static) */}
+      <div className="container-vp mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-vp-blue tracking-tight relative inline-block">
+            Nuestros Socios de Negocios
+            <span className="block h-1.5 w-24 bg-vp-red mx-auto mt-4 rounded-full"></span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+          {techPartnersLogos.map((logo) => (
+            <div
+              key={logo.name}
+              className="flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            >
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="h-12 md:h-16 w-auto object-contain max-w-[140px]"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t border-gray-100 my-16 opacity-50"></div>
+
+      {/* Institutional Clients Section (Carousel) */}
       <div className="container-vp mb-16 text-center">
         <h2 className="text-3xl md:text-5xl font-extrabold text-vp-blue tracking-tight relative inline-block">
           Empresas que confían en nosotros

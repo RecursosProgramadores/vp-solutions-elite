@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,11 +13,11 @@ const Footer = () => {
   ];
 
   const services = [
-    'Soporte de Servidores',
-    'Mantenimiento de Storage',
-    'Venta de Hardware',
-    'Alquiler de Servidores',
-    'Partes y Piezas',
+    { name: 'Soporte de Servidores', href: '/#servicios' },
+    { name: 'Mantenimiento de Storage', href: '/#servicios' },
+    { name: 'Venta de Hardware', href: '/#servicios' },
+    { name: 'Alquiler de Servidores', href: '/#servicios' },
+    { name: 'Partes y Piezas', href: '/#servicios' },
   ];
 
   const legalLinks = [
@@ -28,7 +29,7 @@ const Footer = () => {
     <footer className="bg-navy-deep text-white">
       {/* Main Footer */}
       <div className="container-vp py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
@@ -64,12 +65,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-base font-semibold text-white/70 transition-all hover:text-white hover:translate-x-2 inline-block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -80,13 +81,13 @@ const Footer = () => {
             <h4 className="mb-8 font-outfit text-xl font-black uppercase tracking-wider text-vp-green">Servicios</h4>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#servicios"
+                <li key={service.name}>
+                  <Link
+                    to={service.href}
                     className="text-base font-semibold text-white/70 transition-all hover:text-white hover:translate-x-2 inline-block"
                   >
-                    {service}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -134,12 +135,12 @@ const Footer = () => {
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 {legalLinks.map((link, index) => (
                   <div key={link.name} className="flex items-center gap-6">
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="transition-colors hover:text-vp-green"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                     {index < legalLinks.length - 1 && <span className="hidden md:inline text-white/20">|</span>}
                   </div>
                 ))}

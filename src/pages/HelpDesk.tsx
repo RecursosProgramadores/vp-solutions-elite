@@ -103,11 +103,11 @@ const HelpDeskPage = () => {
                             <Headphones className="h-4 w-4" />
                             <span>Centro de Soporte Especializado</span>
                         </div>
-                        <h1 className="mb-6 font-outfit text-5xl font-black tracking-tighter text-foreground sm:text-7xl">
+                        <h1 className="mb-6 font-outfit text-4xl font-black tracking-tighter text-foreground sm:text-7xl">
                             Mesa de <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Ayuda</span>
                         </h1>
-                        <p className="text-2xl text-muted-foreground leading-relaxed font-medium">
-                            En **VP SOLUTIONS**, su tranquilidad es nuestra prioridad. Nuestro equipo de expertos está a su disposición para resolver cualquier inconveniente técnico con la agilidad y precisión que su negocio demanda.
+                        <p className="text-lg sm:text-2xl text-muted-foreground leading-relaxed font-medium px-4">
+                            En <strong>VP SOLUTIONS PERU</strong>, su tranquilidad es nuestra prioridad. Nuestro equipo de expertos está a su disposición para resolver cualquier inconveniente técnico con la agilidad y precisión que su negocio demanda.
                         </p>
                     </div>
 
@@ -168,7 +168,7 @@ const HelpDeskPage = () => {
 
                         {/* Support Form */}
                         <div className="lg:col-span-7">
-                            <div className="rounded-3xl border border-border bg-card/80 backdrop-blur-xl p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative overflow-hidden">
+                            <div className="rounded-3xl border border-border bg-card/80 backdrop-blur-xl p-6 sm:p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-accent to-primary" />
                                 <div className="mb-8 md:mb-10">
                                     <h2 className="mb-3 text-3xl sm:text-4xl font-black text-foreground tracking-tighter">Registro de Ticket</h2>

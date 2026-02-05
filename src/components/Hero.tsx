@@ -30,29 +30,29 @@ const Hero = () => {
         <div className="mx-auto flex max-w-5xl flex-col items-center">
 
           {/* Main Title */}
-          <h1 className="mb-6 animate-fade-in-up font-outfit text-3xl font-black tracking-tighter text-white sm:text-6xl lg:text-8xl px-4 sm:px-0">
+          <h1 className="mb-6 animate-fade-in-up font-outfit text-4xl font-black tracking-tighter text-white sm:text-5xl lg:text-7xl xl:text-8xl px-4 sm:px-0 leading-[1.1]">
             Experto en Soporte de <span className="text-[#8ec955] drop-shadow-[0_0_20px_rgba(142,201,85,0.3)]">Infraestructura Tecnológica</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mb-10 animate-fade-in-up font-outfit text-lg text-white/90 sm:text-2xl md:text-3xl font-semibold tracking-tight uppercase md:whitespace-nowrap px-4 sm:px-0" style={{ animationDelay: '0.1s' }}>
+          <p className="mb-10 animate-fade-in-up font-outfit text-base text-white/90 sm:text-xl lg:text-2xl font-semibold tracking-tight uppercase md:whitespace-nowrap px-6 sm:px-0" style={{ animationDelay: '0.1s' }}>
             Tu aliado estratégico en tecnología desde hace 13 años
           </p>
 
           {/* Services highlight bullets */}
-          <div className="mb-12 flex flex-wrap items-center justify-center gap-6 text-base font-black text-white sm:gap-4 animate-fade-in-up group" style={{ animationDelay: '0.2s' }}>
+          <div className="mb-12 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-sm font-black text-white animate-fade-in-up group" style={{ animationDelay: '0.2s' }}>
             {[
               "Infraestructura Tecnológica",
               "Soporte Enterprise 24x7",
               "Servicios de Hardware IT",
               "Equipamiento Tecnológico"
             ].map((service, i) => (
-              <div key={service} className="flex items-center gap-3">
-                <span className="flex items-center gap-3 rounded-full bg-white/10 px-6 py-3 font-outfit text-sm font-black uppercase tracking-widest text-white backdrop-blur-md border border-white/20 transition-all hover:bg-[#8ec955] hover:text-[#001524] hover:scale-105 hover:border-transparent cursor-default shadow-lg">
-                  <span className="h-2 w-2 rounded-full bg-[#8ec955] transition-colors group-hover:bg-white" />
+              <div key={service} className="flex items-center gap-2">
+                <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 sm:px-6 sm:py-3 font-outfit text-[10px] sm:text-xs font-black uppercase tracking-[0.1em] sm:tracking-widest text-white backdrop-blur-md border border-white/20 transition-all hover:bg-[#8ec955] hover:text-[#001524] hover:scale-105 hover:border-transparent cursor-default shadow-lg whitespace-nowrap">
+                  <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#8ec955] transition-colors group-hover:bg-white" />
                   {service}
                 </span>
-                {i < 3 && <span className="hidden lg:inline text-white/20 text-2xl font-thin mx-2">|</span>}
+                {i < 3 && <span className="hidden xl:inline text-white/20 text-2xl font-thin mx-1">|</span>}
               </div>
             ))}
           </div>
@@ -84,7 +84,7 @@ const Hero = () => {
             <h2 className="text-2xl font-black text-white">Certificaciones Internacionales</h2>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-4">
             {[
               { img: "/iso9001.jpg", title: "ISO 9001", label: "Calidad" },
               { img: "/iso37001.jpg", title: "ISO 37001", label: "Antisoborno" },
@@ -92,7 +92,7 @@ const Hero = () => {
             ].map((iso, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 sm:gap-5 rounded-2xl border-2 border-white/10 bg-white/10 p-4 sm:p-5 backdrop-blur-md transition-all hover:bg-white/15 hover:border-[#8ec955]/30 hover:scale-105 shadow-lg w-[280px] sm:w-auto"
+                className="flex items-center gap-4 sm:gap-5 rounded-2xl border-2 border-white/10 bg-white/10 p-4 sm:p-5 backdrop-blur-md transition-all hover:bg-white/15 hover:border-[#8ec955]/30 hover:scale-105 shadow-lg w-full sm:w-auto min-w-[260px] max-w-[320px] sm:max-w-none"
               >
                 <div className="overflow-hidden rounded-xl bg-white p-2 sm:p-3 shadow-inner shrink-0">
                   <img src={iso.img} alt={iso.title} className="h-10 sm:h-14 w-auto object-contain" />

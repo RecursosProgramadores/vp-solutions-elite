@@ -30,7 +30,7 @@ const Header = () => {
   ];
 
   const navLinks = [
-    { name: 'Inicio', href: '/#inicio' },
+    { name: 'Inicio', href: '/' },
     { name: 'Servicios', href: '/#servicios', hasSubmenu: true },
     { name: 'Nosotros', href: '/#nosotros' },
     { name: 'Mesa de Ayuda', href: '/mesa-de-ayuda' },
@@ -65,14 +65,14 @@ const Header = () => {
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className={`nav-link flex items-center gap-1.5 font-outfit text-lg font-black transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
                         }`}
                     >
                       {link.name}
                       <ChevronDown className="h-4 w-4" />
-                    </a>
+                    </Link>
 
                     {/* Mega Menu */}
                     <div
@@ -82,27 +82,27 @@ const Header = () => {
                       <div className="rounded-xl border border-border bg-card p-4 shadow-xl">
                         <div className="space-y-1">
                           {services.map((service) => (
-                            <a
+                            <Link
                               key={service.title}
-                              href={service.href}
+                              to={service.href}
                               className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-secondary"
                             >
                               <service.icon className="h-6 w-6 text-primary" />
                               <span className="text-base font-semibold text-foreground">{service.title}</span>
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className={`nav-link font-outfit text-lg font-black transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
                       }`}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
@@ -138,14 +138,14 @@ const Header = () => {
         <div className="border-t border-border bg-card px-4 py-6">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="font-outfit text-xl font-black text-foreground hover:text-primary uppercase tracking-tight"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <Button
               onClick={() => {
