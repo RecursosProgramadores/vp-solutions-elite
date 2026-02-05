@@ -67,11 +67,11 @@ const Header = () => {
                   >
                     <a
                       href={link.href}
-                      className={`nav-link flex items-center gap-1.5 text-lg font-bold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
+                      className={`nav-link flex items-center gap-1.5 font-outfit text-lg font-black transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
                         }`}
                     >
                       {link.name}
-                      <ChevronDown className="h-5 w-5" />
+                      <ChevronDown className="h-4 w-4" />
                     </a>
 
                     {/* Mega Menu */}
@@ -98,7 +98,7 @@ const Header = () => {
                 ) : (
                   <a
                     href={link.href}
-                    className={`nav-link text-lg font-bold transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
+                    className={`nav-link font-outfit text-lg font-black transition-colors ${(isScrolled || !isHome) ? 'text-foreground hover:text-primary' : 'text-white hover:text-vp-green drop-shadow-md'
                       }`}
                   >
                     {link.name}
@@ -113,9 +113,9 @@ const Header = () => {
             <Button
               onClick={handleWhatsApp}
               size="lg"
-              className="h-12 bg-primary px-6 text-lg font-bold text-primary-foreground hover:bg-destructive transition-all hover:scale-105 shadow-xl"
+              className="h-12 bg-primary px-6 text-base font-black text-primary-foreground hover:bg-destructive transition-all hover:scale-105 shadow-xl uppercase tracking-tighter"
             >
-              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-6 w-6" />
+              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-5 w-5 brightness-0 invert" />
               Solicitar Cotización
             </Button>
           </div>
@@ -142,7 +142,7 @@ const Header = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-foreground hover:text-primary"
+                className="font-outfit text-xl font-black text-foreground hover:text-primary uppercase tracking-tight"
               >
                 {link.name}
               </a>
@@ -152,9 +152,9 @@ const Header = () => {
                 handleWhatsApp();
                 setIsMobileMenuOpen(false);
               }}
-              className="mt-4 w-full bg-primary text-primary-foreground hover:bg-destructive transition-colors"
+              className="mt-4 h-14 w-full bg-primary text-xl font-black text-primary-foreground hover:bg-destructive transition-colors uppercase tracking-tighter shadow-lg"
             >
-              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-5 w-5" />
+              <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-6 w-6 brightness-0 invert" />
               Solicitar Cotización
             </Button>
           </div>

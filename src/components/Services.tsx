@@ -65,7 +65,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group relative overflow-hidden rounded-3xl border-2 bg-card p-10 transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 ${service.highlight
+              className={`group relative overflow-hidden rounded-3xl border-2 bg-card p-6 sm:p-10 transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 ${service.highlight
                 ? 'border-primary/30 shadow-lg'
                 : 'border-border'
                 }`}
@@ -105,11 +105,11 @@ const Services = () => {
                 </p>
 
                 {/* Features */}
-                <div className="mb-6 flex flex-wrap justify-center gap-x-5 gap-y-2.5">
+                <div className="mb-6 flex flex-wrap justify-center gap-x-4 sm:gap-x-5 gap-y-2.5">
                   {service.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-vp-green" />
-                      <span className="text-sm font-bold text-foreground/80">{feature}</span>
+                      <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-vp-green shrink-0" />
+                      <span className="text-xs sm:text-sm font-black text-foreground/80">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -124,9 +124,9 @@ const Services = () => {
 
                 <Button
                   onClick={() => handleWhatsApp(service.title)}
-                  className="h-14 w-full bg-[#8ec955] text-white hover:bg-[#7ab844] transition-all hover:scale-[1.05] shadow-xl shadow-[#8ec955]/30 text-xl font-black uppercase tracking-tighter"
+                  className="h-14 w-full bg-[#8ec955] text-white hover:bg-[#7ab844] transition-all hover:scale-[1.05] shadow-xl shadow-[#8ec955]/30 text-base sm:text-xl font-black uppercase tracking-tighter"
                 >
-                  <img src="/wstp.svg" alt="WhatsApp" className="mr-3 h-7 w-7 brightness-0 invert" />
+                  <img src="/wstp.svg" alt="WhatsApp" className="mr-2 sm:mr-3 h-6 sm:h-7 w-6 sm:w-7 brightness-0 invert" />
                   CONSULTAR WHATSAPP
                 </Button>
               </div>

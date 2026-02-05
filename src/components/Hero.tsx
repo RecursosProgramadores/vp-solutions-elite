@@ -30,12 +30,12 @@ const Hero = () => {
         <div className="mx-auto flex max-w-5xl flex-col items-center">
 
           {/* Main Title */}
-          <h1 className="mb-8 animate-fade-in-up font-outfit text-4xl font-black tracking-tighter text-white sm:text-6xl lg:text-8xl">
+          <h1 className="mb-6 animate-fade-in-up font-outfit text-3xl font-black tracking-tighter text-white sm:text-6xl lg:text-8xl px-4 sm:px-0">
             Experto en Soporte de <span className="text-[#8ec955] drop-shadow-[0_0_20px_rgba(142,201,85,0.3)]">Infraestructura Tecnológica</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mb-12 animate-fade-in-up font-outfit text-xl text-white/90 sm:text-2xl md:text-3xl font-semibold tracking-tight uppercase md:whitespace-nowrap" style={{ animationDelay: '0.1s' }}>
+          <p className="mb-10 animate-fade-in-up font-outfit text-lg text-white/90 sm:text-2xl md:text-3xl font-semibold tracking-tight uppercase md:whitespace-nowrap px-4 sm:px-0" style={{ animationDelay: '0.1s' }}>
             Tu aliado estratégico en tecnología desde hace 13 años
           </p>
 
@@ -62,7 +62,7 @@ const Hero = () => {
             <Button
               onClick={handleWhatsApp}
               size="lg"
-              className="h-14 bg-[#8ec955] px-10 text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-[#8ec955]/90 sm:w-auto"
+              className="h-14 w-full sm:w-auto bg-[#8ec955] px-8 sm:px-10 text-base sm:text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-[#8ec955]/90"
             >
               <img src="/wstp.svg" alt="WhatsApp" className="mr-2 h-6 w-6" />
               Solicitar Cotización
@@ -71,7 +71,7 @@ const Hero = () => {
               variant="outline"
               size="lg"
               asChild
-              className="h-14 border-2 border-white/20 bg-white/10 px-10 text-lg font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:w-auto"
+              className="h-14 w-full sm:w-auto border-2 border-white/20 bg-white/10 px-8 sm:px-10 text-base sm:text-lg font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
             >
               <a href="#servicios">Nuestros Servicios</a>
             </Button>
@@ -92,14 +92,14 @@ const Hero = () => {
             ].map((iso, index) => (
               <div
                 key={index}
-                className="flex items-center gap-5 rounded-2xl border-2 border-white/10 bg-white/10 p-5 backdrop-blur-md transition-all hover:bg-white/15 hover:border-[#8ec955]/30 hover:scale-105 shadow-lg"
+                className="flex items-center gap-4 sm:gap-5 rounded-2xl border-2 border-white/10 bg-white/10 p-4 sm:p-5 backdrop-blur-md transition-all hover:bg-white/15 hover:border-[#8ec955]/30 hover:scale-105 shadow-lg w-[280px] sm:w-auto"
               >
-                <div className="overflow-hidden rounded-xl bg-white p-3 shadow-inner">
-                  <img src={iso.img} alt={iso.title} className="h-14 w-auto object-contain" />
+                <div className="overflow-hidden rounded-xl bg-white p-2 sm:p-3 shadow-inner shrink-0">
+                  <img src={iso.img} alt={iso.title} className="h-10 sm:h-14 w-auto object-contain" />
                 </div>
                 <div className="text-left">
-                  <p className="text-lg font-black text-white leading-tight tracking-tight">{iso.title}</p>
-                  <p className="text-base uppercase tracking-[0.15em] text-[#8ec955] font-black">{iso.label}</p>
+                  <p className="text-base sm:text-lg font-black text-white leading-tight tracking-tight">{iso.title}</p>
+                  <p className="text-xs sm:text-base uppercase tracking-[0.1em] sm:tracking-[0.15em] text-[#8ec955] font-black">{iso.label}</p>
                 </div>
               </div>
             ))}

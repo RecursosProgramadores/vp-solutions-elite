@@ -123,28 +123,28 @@ const HelpDeskPage = () => {
                                         <button
                                             key={method.title}
                                             onClick={method.action}
-                                            className="group relative flex items-center gap-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 text-left transition-all duration-300 hover:border-primary/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
+                                            className="group relative flex items-center gap-4 sm:gap-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-4 sm:p-8 text-left transition-all duration-300 hover:border-primary/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
                                         >
-                                            <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${method.primary ? 'bg-whatsapp text-white shadow-md' : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'}`}>
-                                                <method.icon className="h-8 w-8" />
+                                            <div className={`flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${method.primary ? 'bg-whatsapp text-white shadow-md' : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'}`}>
+                                                <method.icon className="h-6 w-6 sm:h-8 sm:w-8" />
                                             </div>
-                                            <div className="flex-1">
-                                                <span className="block text-sm font-black uppercase tracking-widest text-muted-foreground mb-1 leading-none">{method.title}</span>
-                                                <span className="font-outfit text-2xl font-black text-foreground group-hover:text-primary transition-colors tracking-tighter">
+                                            <div className="flex-1 min-w-0">
+                                                <span className="block text-xs sm:text-sm font-black uppercase tracking-widest text-muted-foreground mb-1 leading-none">{method.title}</span>
+                                                <span className="block font-outfit text-base sm:text-2xl font-black text-foreground group-hover:text-primary transition-colors tracking-tighter break-all sm:break-normal">
                                                     {method.value}
                                                 </span>
                                             </div>
                                         </button>
                                     ))}
                                 </div>
-                                <div className="mt-10 p-6 rounded-2xl bg-gradient-to-br from-card to-secondary/30 border border-border shadow-inner">
-                                    <p className="text-xl text-muted-foreground leading-relaxed italic relative">
-                                        <span className="absolute -top-6 -left-3 text-6xl text-primary/20 font-serif">"</span>
+                                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-card to-secondary/30 border border-border shadow-inner">
+                                    <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed italic relative">
+                                        <span className="absolute -top-4 -left-2 sm:-top-6 sm:-left-3 text-4xl sm:text-6xl text-primary/20 font-serif">"</span>
                                         Garantizamos la continuidad operativa de su empresa mediante una infraestructura TI sólida y un soporte técnico de excelencia. Cada reporte es gestionado con la máxima prioridad profesional.
                                     </p>
                                     <div className="mt-4 flex items-center gap-2">
                                         <div className="h-px flex-1 bg-border" />
-                                        <span className="text-xs font-bold uppercase tracking-widest text-primary/60">VP Solutions Service Desk</span>
+                                        <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary/60">VP Solutions Service Desk</span>
                                     </div>
                                 </div>
                             </div>
@@ -153,12 +153,12 @@ const HelpDeskPage = () => {
                             <div className="rounded-2xl bg-primary/10 border border-primary/20 p-8 relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform duration-500 group-hover:scale-110" />
                                 <div className="flex items-start gap-5 relative z-10">
-                                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary shadow-lg shadow-primary/20">
-                                        <Clock className="h-7 w-7" />
+                                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary shadow-lg shadow-primary/20">
+                                        <Clock className="h-6 w-6 sm:h-7 sm:w-7" />
                                     </div>
                                     <div>
-                                        <h3 className="mb-2 text-xl font-bold text-foreground">SLA de Respuesta</h3>
-                                        <p className="text-muted-foreground leading-relaxed text-lg">
+                                        <h3 className="mb-2 text-lg sm:text-xl font-bold text-foreground">SLA de Respuesta</h3>
+                                        <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
                                             Compromiso de atención en menos de <strong className="text-primary underline decoration-2 underline-offset-4">2 horas</strong> durante horario hábil (Lun-Vie 8am-6pm).
                                         </p>
                                     </div>
@@ -170,9 +170,9 @@ const HelpDeskPage = () => {
                         <div className="lg:col-span-7">
                             <div className="rounded-3xl border border-border bg-card/80 backdrop-blur-xl p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-accent to-primary" />
-                                <div className="mb-10">
-                                    <h2 className="mb-3 text-4xl font-black text-foreground tracking-tighter">Registro de Ticket</h2>
-                                    <p className="text-xl text-muted-foreground font-medium">Proporcione los detalles de su requerimiento para una atención inmediata.</p>
+                                <div className="mb-8 md:mb-10">
+                                    <h2 className="mb-3 text-3xl sm:text-4xl font-black text-foreground tracking-tighter">Registro de Ticket</h2>
+                                    <p className="text-lg sm:text-xl text-muted-foreground font-medium">Proporcione los detalles de su requerimiento para una atención inmediata.</p>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-8">
@@ -187,7 +187,7 @@ const HelpDeskPage = () => {
                                             onChange={handleChange}
                                             required
                                             placeholder="Ingrese su nombre completo"
-                                            className="h-14 rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-lg"
+                                            className="h-12 sm:h-14 rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-base sm:text-lg"
                                         />
                                     </div>
 
@@ -204,7 +204,7 @@ const HelpDeskPage = () => {
                                                 onChange={handleChange}
                                                 required
                                                 placeholder="correo@vpsolutions.pe"
-                                                className="h-14 rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-lg"
+                                                className="h-12 sm:h-14 rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-base sm:text-lg"
                                             />
                                         </div>
                                         <div className="space-y-3">
@@ -219,7 +219,7 @@ const HelpDeskPage = () => {
                                                 onChange={handleChange}
                                                 required
                                                 placeholder="+51 9XX XXX XXX"
-                                                className="h-14 rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-lg"
+                                                className="h-12 sm:h-14 rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-base sm:text-lg"
                                             />
                                         </div>
                                     </div>
@@ -236,14 +236,14 @@ const HelpDeskPage = () => {
                                             required
                                             placeholder="Describa su consulta técnica con el mayor detalle posible para acelerar el diagnóstico..."
                                             rows={6}
-                                            className="resize-none rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-lg p-4"
+                                            className="resize-none rounded-xl border-border bg-background/50 focus:ring-2 focus:ring-primary/20 transition-all text-base sm:text-lg p-4"
                                         />
                                     </div>
 
                                     <Button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="h-16 w-full bg-primary hover:bg-destructive text-primary-foreground text-xl font-bold rounded-2xl transition-all duration-300 shadow-[0_10px_20px_rgba(var(--primary),0.3)] hover:shadow-none hover:translate-y-1"
+                                        className="h-14 sm:h-16 w-full bg-primary hover:bg-destructive text-primary-foreground text-lg sm:text-xl font-bold rounded-2xl transition-all duration-300 shadow-[0_10px_20px_rgba(var(--primary),0.3)] hover:shadow-none hover:translate-y-1"
                                     >
                                         {isSubmitting ? (
                                             <span className="flex items-center gap-2">
@@ -251,8 +251,8 @@ const HelpDeskPage = () => {
                                                 Procesando Ticket...
                                             </span>
                                         ) : (
-                                            <span className="flex items-center justify-center gap-3">
-                                                <Send className="h-6 w-6" />
+                                            <span className="flex items-center justify-center gap-2 sm:gap-3">
+                                                <Send className="h-5 w-5 sm:h-6 sm:w-6" />
                                                 Enviar Solicitud vía WhatsApp
                                             </span>
                                         )}

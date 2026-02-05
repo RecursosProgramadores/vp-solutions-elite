@@ -60,7 +60,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-8 text-xl font-black uppercase tracking-wider text-vp-green">Enlaces Rápidos</h4>
+            <h4 className="mb-8 font-outfit text-xl font-black uppercase tracking-wider text-vp-green">Enlaces Rápidos</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -77,7 +77,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="mb-8 text-xl font-black uppercase tracking-wider text-vp-green">Servicios</h4>
+            <h4 className="mb-8 font-outfit text-xl font-black uppercase tracking-wider text-vp-green">Servicios</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
@@ -94,28 +94,28 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-8 text-xl font-black uppercase tracking-wider text-vp-green">Contacto</h4>
+            <h4 className="mb-8 font-outfit text-xl font-black uppercase tracking-wider text-vp-green">Contacto</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
                 <Mail className="mt-1 h-6 w-6 shrink-0 text-vp-green" />
-                <div className="space-y-2 text-base font-semibold text-white/80">
-                  <a href="mailto:ventas@vpsolutions.com.pe" className="block hover:text-white transition-colors">
+                <div className="space-y-2 text-base font-black text-white/80 min-w-0">
+                  <a href="mailto:ventas@vpsolutions.com.pe" className="block hover:text-white transition-colors break-all lg:break-normal">
                     ventas@vpsolutions.com.pe
                   </a>
-                  <a href="mailto:victor.portocarrero@vpsolutions.com.pe" className="block hover:text-white transition-colors">
+                  <a href="mailto:victor.portocarrero@vpsolutions.com.pe" className="block hover:text-white transition-colors break-all lg:break-normal">
                     victor.portocarrero@vpsolutions.com.pe
                   </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="h-6 w-6 shrink-0 text-vp-green" />
-                <a href="tel:+51938152389" className="text-lg font-bold text-white/90 hover:text-white transition-colors">
+                <a href="tel:+51938152389" className="font-outfit text-lg font-black text-white/90 hover:text-white transition-colors">
                   +51 938 152 389
                 </a>
               </div>
               <div className="flex items-center gap-4">
                 <MapPin className="h-6 w-6 shrink-0 text-vp-green" />
-                <span className="text-lg font-bold text-white/90">Lima, Perú</span>
+                <span className="font-outfit text-lg font-black text-white/90">Lima, Perú</span>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container-vp py-8">
           <div className="flex flex-col items-center justify-center gap-8 text-center">
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-base font-bold text-white/70">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm sm:text-base font-black text-white/70">
               <p>
                 © {currentYear} VP SOLUTIONS PERU S.A.C. – Todos los derechos reservados
               </p>

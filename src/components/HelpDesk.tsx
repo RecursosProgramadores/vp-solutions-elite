@@ -101,22 +101,22 @@ const HelpDesk = () => {
                 <button
                   key={method.title}
                   onClick={method.action}
-                  className={`group flex w-full items-center gap-6 rounded-xl border p-6 text-left transition-all ${method.primary
+                  className={`group flex w-full items-center gap-4 sm:gap-6 rounded-xl border p-4 sm:p-6 text-left transition-all ${method.primary
                     ? 'border-whatsapp/30 bg-whatsapp/5 hover:border-whatsapp/50 hover:bg-whatsapp/10'
                     : 'border-border bg-card hover:border-primary/30 hover:bg-primary/5'
                     }`}
                 >
                   <div
                     className={`flex shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${method.primary
-                      ? 'h-16 w-16 bg-whatsapp text-white shadow-md'
-                      : 'h-14 w-14 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white shadow-sm'
+                      ? 'h-14 w-14 sm:h-16 sm:w-16 bg-whatsapp text-white shadow-md'
+                      : 'h-12 w-12 sm:h-14 sm:w-14 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white shadow-sm'
                       }`}
                   >
-                    <method.icon className={method.primary ? "h-9 w-9" : "h-7 w-7"} />
+                    <method.icon className={method.primary ? "h-7 w-7 sm:h-9 sm:w-9" : "h-6 w-6 sm:h-7 sm:w-7"} />
                   </div>
-                  <div>
-                    <span className="block text-sm font-black uppercase tracking-widest text-muted-foreground mb-1">{method.title}</span>
-                    <span className="text-2xl font-black text-foreground tracking-tight">{method.value}</span>
+                  <div className="min-w-0">
+                    <span className="block text-xs sm:text-sm font-black uppercase tracking-widest text-muted-foreground mb-1">{method.title}</span>
+                    <span className="block text-lg sm:text-2xl font-black text-foreground tracking-tight break-all sm:break-normal">{method.value}</span>
                   </div>
                 </button>
               ))}
